@@ -17,7 +17,7 @@ extension Date {
 
     private static func hourOfTheDay(hour: Int) -> String {
         switch hour {
-            case 1...11: return "Morning"
+            case 0...11: return "Morning"
             case 12...17: return "Afternoon"
             case 18...23: return "Evening"
             default: return ""

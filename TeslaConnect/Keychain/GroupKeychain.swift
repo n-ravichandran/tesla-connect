@@ -28,4 +28,7 @@ public enum GroupKeychain {
     @KeychainItem(keychain, "Credentials")
     private static var credentialsData: Data? = nil
 
+    @KeychainItem(keychain, "primaryVehicleID")
+    public static var primaryVehicleID: Int? = nil
+
 }

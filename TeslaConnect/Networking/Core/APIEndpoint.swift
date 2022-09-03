@@ -21,6 +21,7 @@ enum APIEndpoint: URLRequestBuilder {
     case refreshToken(_ parameters: RefreshTokenRequestParam)
     case vehicles
     case vehicle(id: Int)
+    case vehicleData(id: Int)
     
     var path: String {
         switch self {
@@ -32,6 +33,8 @@ enum APIEndpoint: URLRequestBuilder {
                 return "/api/1/vehicles"
             case .vehicle(let id):
                 return "/api/1/vehicles/\(id)"
+            case .vehicleData(let id):
+                return "/api/1/vehicles/\(id)/vehicle_data"
         }
     }
     
@@ -40,7 +43,7 @@ enum APIEndpoint: URLRequestBuilder {
             case .bearerToken,
                     .refreshToken:
                 return .post
-            case .vehicle, .vehicles:
+            case .vehicle, .vehicles, .vehicleData:
                 return .get
         }
     }
@@ -51,7 +54,7 @@ enum APIEndpoint: URLRequestBuilder {
                 return parameters.dictionary
             case .refreshToken(let parameters):
                 return parameters.dictionary
-            case .vehicle, .vehicles:
+            case .vehicle, .vehicles, .vehicleData:
                 return nil
         }
     }
@@ -65,7 +68,7 @@ enum APIEndpoint: URLRequestBuilder {
             case .bearerToken,
                     .refreshToken:
                 return true
-            case .vehicle, .vehicles:
+            case .vehicle, .vehicles, .vehicleData:
                 return false
         }
     }

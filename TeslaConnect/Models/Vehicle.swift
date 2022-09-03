@@ -62,3 +62,23 @@ struct Vehicle: Codable {
         case apiVersion = "api_version"
     }
 }
+
+public enum VehicleModel: String {
+    case modelS = "models"
+    case model3 = "model3"
+    case modelX = "modelx"
+    case modelY = "modely"
+
+    init(value: String) {
+        switch value {
+            case Self.modelS.rawValue:
+                self = .modelS
+            case Self.model3.rawValue:
+                self = .model3
+            case Self.modelX.rawValue:
+                self = .modelX
+            default:
+                self = .modelY
+        }
+    }
+}

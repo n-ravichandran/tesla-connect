@@ -22,9 +22,10 @@ struct HomeView: View {
                         ScrollView {
                             VStack {
                                 VehicleCardView(
-                                    image: Image("model_y"),
+                                    image: Image(vehicle.imageName),
                                     name: vehicle.displayName,
-                                    batteryLevel: "75%"
+                                    batteryLevel: vehicle.batteryLevelString,
+                                    batteryImageName: vehicle.batteryLevelImageName
                                 )
                                 .padding()
                             }
@@ -52,11 +53,14 @@ struct HomeView: View {
     }
 }
 
+// MARK: - VehicleCardView
+
 struct VehicleCardView: View {
 
     let image: Image
     let name: String
     let batteryLevel: String
+    let batteryImageName: String
 
     var body: some View {
         VStack {
@@ -65,7 +69,7 @@ struct VehicleCardView: View {
                     Text(name)
                         .font(Font.title2)
                     HStack() {
-                        Image(systemName: "battery.75")
+                        Image(systemName: batteryImageName)
                             .font(.footnote)
                         Text(batteryLevel)
                             .font(.footnote)
@@ -76,15 +80,18 @@ struct VehicleCardView: View {
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .cornerRadius(20)
+                .clipped()
         }
         .padding()
-        .background(Color.white)
+        .background(Color.Fill.tileBackground)
         .cornerRadius(20)
         .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.2), radius: 10, x: 0, y: 0)
     }
 
 }
 
+// MARK: - NoCarsView
 
 struct NoCarsView: View {
 

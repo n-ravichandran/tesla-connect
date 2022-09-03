@@ -12,11 +12,24 @@ import Alamofire
 class TeslaService: APIService {
 
     func getVehicles() async throws -> [Vehicle] {
-        try await client.request(requestBuilder: APIEndpoint.vehicles, responseType: VehicelsAPIResponse.self).response
+        try await client.request(
+            requestBuilder: APIEndpoint.vehicles,
+            responseType: VehicelsAPIResponse.self
+        ).response
     }
 
     func getVehicle(for id: Int) async throws -> Vehicle {
-        try await client.request(requestBuilder: APIEndpoint.vehicle(id: id), responseType: Vehicle.self)
+        try await client.request(
+            requestBuilder: APIEndpoint.vehicle(id: id),
+            responseType: Vehicle.self
+        )
+    }
+
+    func getVehicleData(for id: Int) async throws -> VehicleData {
+        try await client.request(
+            requestBuilder: APIEndpoint.vehicleData(id: id),
+            responseType: VehicleData.self
+        )
     }
     
 }
