@@ -15,6 +15,7 @@
 		E968421D28C356D000996F81 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421C28C356D000996F81 /* HomeViewModel.swift */; };
 		E968421F28C36D6100996F81 /* VehiclesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421E28C36D6100996F81 /* VehiclesAPIResponse.swift */; };
 		E968422228C370B600996F81 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968422128C370B600996F81 /* ActivityView.swift */; };
+		E968422528C3A04200996F81 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E968422428C3A04200996F81 /* Lottie */; };
 		E994777327D2B18C00CE4337 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777227D2B18C00CE4337 /* CodableExtensions.swift */; };
 		E994777527D2E55E00CE4337 /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777427D2E55E00CE4337 /* HTTPStatus.swift */; };
 		E994777727D2E58C00CE4337 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777627D2E58C00CE4337 /* APIError.swift */; };
@@ -113,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9CCD42A27CD99D60065E3C5 /* Alamofire in Frameworks */,
+				E968422528C3A04200996F81 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +352,7 @@
 			name = TeslaConnect;
 			packageProductDependencies = (
 				E9CCD42927CD99D60065E3C5 /* Alamofire */,
+				E968422428C3A04200996F81 /* Lottie */,
 			);
 			productName = TeslaConnect;
 			productReference = E9CCD3E627CC716A0065E3C5 /* TeslaConnect.app */;
@@ -425,6 +428,7 @@
 			mainGroup = E9CCD3DD27CC716A0065E3C5;
 			packageReferences = (
 				E9CCD42827CD99D60065E3C5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E968422328C3A04200996F81 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = E9CCD3E727CC716A0065E3C5 /* Products */;
 			projectDirPath = "";
@@ -833,6 +837,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E968422328C3A04200996F81 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E9CCD42827CD99D60065E3C5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -844,6 +856,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E968422428C3A04200996F81 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E968422328C3A04200996F81 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		E9CCD42927CD99D60065E3C5 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E9CCD42827CD99D60065E3C5 /* XCRemoteSwiftPackageReference "Alamofire" */;
