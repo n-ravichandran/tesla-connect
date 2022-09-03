@@ -12,7 +12,7 @@ struct Vehicle: Codable {
     let vehicleID: Int
     let vin: String
     let displayName: String
-    let optionCodes: [String]
+    let optionCodes: String
     let color: String?
     let tokens: [String]
     let state: String
@@ -26,7 +26,7 @@ struct Vehicle: Codable {
         vehicleID: Int,
         vin: String,
         displayName: String,
-        optionCodes: [String],
+        optionCodes: String,
         color: String?,
         tokens: [String],
         state: String,

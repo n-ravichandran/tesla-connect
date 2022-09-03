@@ -21,7 +21,16 @@ class AppObject: ObservableObject {
     
     func logout() {
         GroupKeychain.credentials = nil
+        clearCookies()
         updateAuthStatus()
+    }
+
+    func clearCookies(){
+        let cookieJar = HTTPCookieStorage.shared
+
+        for cookie in cookieJar.cookies! {
+            cookieJar.deleteCookie(cookie)
+        }
     }
 
     func updateAuthStatus() {

@@ -32,7 +32,7 @@ class AuthenticationController: NSObject, ObservableObject {
                     Log(error.localizedDescription)
                 }
             } receiveValue: { credentials in
-                print("Credentials: \(credentials)")
+                print("Received access token")
                 GroupKeychain.credentials = credentials
                 self.appObject?.updateAuthStatus()
             }

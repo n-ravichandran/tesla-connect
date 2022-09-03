@@ -22,7 +22,7 @@ class HomeViewModel: ObservableObject {
             do {
                 let vehiclesFetched = try await service.getVehicles()
                 await MainActor.run {
-                    self.vehicles = mockVehiclesData() //vehiclesFetched
+                    self.vehicles = vehiclesFetched
                     self.primaryVehicle = vehicles.first
                     self.showActivity = false
                     Log("Total vehicles: \(vehicles.count)")
@@ -38,7 +38,7 @@ class HomeViewModel: ObservableObject {
 
     func mockVehiclesData() -> [Vehicle] {
         [
-            Vehicle(id: 12345678, vehicleID: 123456, vin: "5YJSA11111111111", displayName: "Starlight", optionCodes: ["MDLS", "RENA"], color: nil, tokens: [], state: "online", inService: false, idString: "12345678", calendarEnabled: true, apiVersion: 7)
+            Vehicle(id: 12345678, vehicleID: 123456, vin: "5YJSA11111111111", displayName: "Starlight Y", optionCodes: "MDLS, RENA", color: nil, tokens: [], state: "online", inService: false, idString: "12345678", calendarEnabled: true, apiVersion: 7)
         ]
     }
 

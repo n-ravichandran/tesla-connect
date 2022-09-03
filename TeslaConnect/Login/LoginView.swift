@@ -17,6 +17,8 @@ struct LoginView: View {
     var body: some View {
         VStack {
             Spacer()
+            AnimatableView(name: "tesla-lottie", animationSpeed: 0.5)
+                .frame(width: 100, height: 100)
             Text("Please authorize this app with Tesla to access or control your car from your Apple Watch.")
                 .font(.headline)
                 .multilineTextAlignment(.center)

@@ -14,29 +14,35 @@ struct HomeView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack {
-                    if homeViewModel.showActivity {
-                        ActivityView(isAnimating: $homeViewModel.showActivity, style: .medium)
+            ZStack {
+                if homeViewModel.showActivity {
+                    ActivityView(isAnimating: $homeViewModel.showActivity, style: .medium)
+                } else {
+                    if let vehicle = homeViewModel.primaryVehicle {
+                        ScrollView {
+                            VStack {
+                                VehicleCardView(
+                                    image: Image("model_y"),
+                                    name: vehicle.displayName,
+                                    batteryLevel: "75%"
+                                )
+                                .padding()
+                            }
+                        }
                     } else {
-                        VehicleCardView(
-                            image: Image("model_y"),
-                            name: "Starlight",
-                            batteryLevel: "75%"
-                        )
-                        .padding()
+                        NoCarsView()
                     }
                 }
-                .navigationTitle(Date.hourOfTheDayMessage)
-                .toolbar {
-                    ToolbarItem() {
-                        Button {
-
-                        } label: {
-                            Image(systemName: "rectangle.portrait.and.arrow.right")
-                        }
-
+            }
+            .navigationTitle(Date.hourOfTheDayMessage)
+            .toolbar {
+                ToolbarItem() {
+                    Button {
+                        appObject.logout()
+                    } label: {
+                        Image(systemName: "rectangle.portrait.and.arrow.right")
                     }
+
                 }
             }
             .onAppear {
@@ -44,9 +50,7 @@ struct HomeView: View {
             }
         }
     }
-
 }
-
 
 struct VehicleCardView: View {
 
@@ -71,12 +75,35 @@ struct VehicleCardView: View {
             }
             image
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
         }
         .padding()
         .background(Color.white)
         .cornerRadius(20)
         .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.2), radius: 10, x: 0, y: 0)
+    }
+
+}
+
+
+struct NoCarsView: View {
+
+    var body: some View {
+        VStack {
+            Spacer()
+            Image(systemName: "bolt.car")
+                .font(.system(size: 25))
+                .padding(8)
+            Text("You do not have any cars in your tesla account.")
+                .multilineTextAlignment(.center)
+                .font(.callout)
+            Spacer()
+            Text("If you think this is an issue please reach out to the developer for assistance.")
+                .multilineTextAlignment(.center)
+                .font(.footnote)
+                .foregroundColor(.gray)
+        }
+        .padding()
     }
 
 }
