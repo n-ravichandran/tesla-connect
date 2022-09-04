@@ -6,16 +6,27 @@
 //
 
 import Foundation
+import UIKit
 
 enum VehicleError: Error {
     case noVehicle
 }
 
+struct UnlockCardViewModel {
+    var iconName: String
+    var title: String
+
+    static var lockState: Self { .init(iconName: "lock.fill", title: "Unlock") }
+    static var unlockedState: Self { .init(iconName: "lock.open.fill", title: "Lock") }
+}
+
 class HomeViewModel: ObservableObject {
 
     private let service = TeslaService()
+    private let impactGenerator = UIImpactFeedbackGenerator(style: .medium)
 
     @Published var primaryVehicle: VehicleViewModel?
+    @Published var unlockCardViewModel: UnlockCardViewModel = .lockState
     @Published var showActivity = false
 
     func loadVehicles() {
@@ -50,6 +61,31 @@ class HomeViewModel: ObservableObject {
         return vehicleID
     }
 
+    func update() {
+        guard let primaryVehicle = primaryVehicle else {
+            return
+        }
+
+        unlockCardViewModel = primaryVehicle.isLocked ? .lockState : .unlockedState
+    }
+
+}
+
+// MARK: - Commands
+
+extension HomeViewModel {
+
+    func toggleLockState() {
+        impactGenerator.impactOccurred()
+        simulateLockToggle()
+    }
+
+}
+
+// MARK: - Simulation Helpers
+
+private extension HomeViewModel {
+
     func mockVehicleViewModel() -> VehicleViewModel {
         VehicleViewModel(
             id: 1234565,
@@ -58,8 +94,28 @@ class HomeViewModel: ObservableObject {
             state: "online",
             batteryLevel: 50,
             batteryRange: 325,
-            exteriorColor: "White"
+            exteriorColor: "White",
+            isLocked: true,
+            interiorTemperatureString: "22℃",
+            isAnyWindowOpen: true
         )
     }
 
+    func simulateLockToggle() {
+        var isLocked = primaryVehicle?.isLocked ?? true
+        isLocked.toggle()
+        primaryVehicle = VehicleViewModel(
+            id: 1234565,
+            displayName: "Starlight",
+            model: .modelX,
+            state: "online",
+            batteryLevel: 50,
+            batteryRange: 325,
+            exteriorColor: "White",
+            isLocked: isLocked,
+            interiorTemperatureString: "22℃",
+            isAnyWindowOpen: true
+        )
+        update()
+    }
 }

@@ -20,15 +20,53 @@ struct HomeView: View {
                 } else {
                     if let vehicle = homeViewModel.primaryVehicle {
                         ScrollView {
-                            VStack {
+                            VStack(spacing: 20) {
                                 VehicleCardView(
                                     image: Image(vehicle.imageName),
                                     name: vehicle.displayName,
                                     batteryLevel: vehicle.batteryLevelString,
                                     batteryImageName: vehicle.batteryLevelImageName
                                 )
-                                .padding()
+
+                                HStack(spacing: 20) {
+                                    CommandCardView(
+                                        title: $homeViewModel.unlockCardViewModel.title,
+                                        iconName: $homeViewModel.unlockCardViewModel.iconName
+                                    ) {
+                                        homeViewModel.toggleLockState()
+                                    }
+                                    .frame(maxWidth: .infinity)
+
+                                    CommandCardView(
+                                        title: .constant("Open Frunk"),
+                                        iconName: .constant("car.fill")
+                                    ) {
+
+                                    }
+                                    .frame(maxWidth: .infinity)
+
+                                    CommandCardView(
+                                        title: .constant("Climate"),
+                                        iconName: .constant("fanblades.fill")
+                                    ) {
+
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                }
+
+
+                                HStack(alignment: .top) {
+                                    LocationCardView()
+                                        .frame(maxWidth: .infinity)
+
+                                    ClimateCardView(
+                                        temperatureString: vehicle.interiorTemperatureString,
+                                        isAnyWindowOpen: vehicle.isAnyWindowOpen
+                                    )
+                                        .frame(maxWidth: .infinity)
+                                }
                             }
+                            .padding()
                         }
                     } else {
                         NoCarsView()
@@ -53,39 +91,102 @@ struct HomeView: View {
     }
 }
 
-// MARK: - VehicleCardView
+struct CommandCardView: View {
 
-struct VehicleCardView: View {
-
-    let image: Image
-    let name: String
-    let batteryLevel: String
-    let batteryImageName: String
+//    @GestureState private var isDetectingPress = false
+    @Binding var title: String
+    @Binding var iconName: String
+    var action: (() -> Void)?
 
     var body: some View {
         VStack {
+            ZStack {
+                Circle()
+                    .fill(Color.Fill.commandButton)
+                    .frame(width: 50, height: 50)
+                Image(systemName: iconName)
+                    .font(.system(size: 20))
+                    .padding(8)
+                    .foregroundColor(Color.Text.commandButtonText)
+            }
+            Text(title)
+                .font(.footnote)
+        }
+        .onTapGesture {
+            action?()
+        }
+//        .scaleEffect(isDetectingPress ? 0.95 : 1.0)
+//        .gesture (
+//            LongPressGesture(minimumDuration: 1.0)
+//                .updating($isDetectingPress) { currentstate, gestureState, transaction in
+//                    transaction.animation = Animation.easeInOut(duration: 0.2)
+//                    gestureState = currentstate
+//                }
+//        )
+    }
+
+}
+
+// MARK: - ClimateCardView
+
+struct ClimateCardView: View {
+
+    var temperatureString: String
+    var isAnyWindowOpen: Bool
+
+    var body: some View {
+        VStack(alignment: .leading) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(name)
-                        .font(Font.title2)
-                    HStack() {
-                        Image(systemName: batteryImageName)
-                            .font(.footnote)
-                        Text(batteryLevel)
-                            .font(.footnote)
-                    }
+                    Text("Climate")
+                        .font(.title3)
+                    Text("EXTERIOR: N/A")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
                 }
                 Spacer()
             }
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(20)
-                .clipped()
+
+            Spacer(minLength: 15)
+
+            HStack {
+                Text(temperatureString)
+                    .font(.title)
+                Spacer()
+                Image(systemName: "snowflake") // Todo: Update icon based on heat/cool
+                    .foregroundColor(.blue)
+            }
+            .padding(.vertical, 4)
+
+            Text("Windows \(isAnyWindowOpen ? "Open" : "Closed")")
         }
         .padding()
         .background(Color.Fill.tileBackground)
-        .cornerRadius(20)
+        .cornerRadius(15)
+        .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.2), radius: 10, x: 0, y: 0)
+    }
+
+}
+
+// MARK: - LocationCardView
+
+struct LocationCardView: View {
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: "location.fill")
+                Text("Location")
+                    .font(.title3)
+            }
+            Spacer()
+            Text("92 Green Rd, West Nyack, NY 10994")
+                .font(.footnote)
+                .foregroundColor(.gray)
+        }
+        .padding()
+        .background(Color.Fill.tileBackground)
+        .cornerRadius(15)
         .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.2), radius: 10, x: 0, y: 0)
     }
 

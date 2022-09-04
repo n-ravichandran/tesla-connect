@@ -36,7 +36,7 @@ class TeslaService: APIService {
 
 // MARK: - Authentication
 
-// ToDo: Migrate to use async/await
+// Todo: Migrate to use async/await
 extension TeslaService {
 
     func getBearerToken(from authorizationCode: String, codeVerifier: String) -> AnyPublisher<Credentials, APIError> {

@@ -11,6 +11,11 @@ extension Color {
 
     enum Fill {
         static let tileBackground = Color("tile")
+        static let commandButton = Color("commandButtonBackground")
+    }
+
+    enum Text {
+        static let commandButtonText = Color("commandButtonText")
     }
 
 }
