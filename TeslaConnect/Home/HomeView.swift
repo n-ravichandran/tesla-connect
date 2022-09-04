@@ -56,7 +56,7 @@ struct HomeView: View {
 
 
                                 HStack(alignment: .top) {
-                                    LocationCardView()
+                                    LocationCardView(locationString: "N/A")
                                         .frame(maxWidth: .infinity)
 
                                     ClimateCardView(
@@ -172,6 +172,8 @@ struct ClimateCardView: View {
 
 struct LocationCardView: View {
 
+    var locationString: String
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -180,7 +182,7 @@ struct LocationCardView: View {
                     .font(.title3)
             }
             Spacer()
-            Text("92 Green Rd, West Nyack, NY 10994")
+            Text(locationString)
                 .font(.footnote)
                 .foregroundColor(.gray)
         }
