@@ -90,7 +90,7 @@ private extension HomeViewModel {
         VehicleViewModel(
             id: 1234565,
             displayName: "Starlight",
-            model: .modelX,
+            model: .modelY,
             state: "online",
             batteryLevel: 50,
             batteryRange: 325,
@@ -107,7 +107,7 @@ private extension HomeViewModel {
         primaryVehicle = VehicleViewModel(
             id: 1234565,
             displayName: "Starlight",
-            model: .modelX,
+            model: .modelS,
             state: "online",
             batteryLevel: 50,
             batteryRange: 325,
