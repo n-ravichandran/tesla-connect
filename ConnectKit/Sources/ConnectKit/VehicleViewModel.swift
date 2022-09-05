@@ -8,19 +8,19 @@
 import ConnectCore
 import SwiftUI
 
-struct VehicleViewModel {
-    let id: Int
-    let displayName: String
-    let model: VehicleModel
-    let state: String
-    let batteryLevel: Int
-    let batteryRange: Double
-    let exteriorColor: String
-    let isLocked: Bool
-    let interiorTemperature: String
-    let isAnyWindowOpen: Bool
+public struct VehicleViewModel {
+    public let id: Int
+    public let displayName: String
+    public let model: VehicleModel
+    public let state: String
+    public let batteryLevel: Int
+    public let batteryRange: Double
+    public let exteriorColor: String
+    public let isLocked: Bool
+    public let interiorTemperature: String
+    public let isAnyWindowOpen: Bool
 
-    var imageName: String {
+    public var imageName: String {
         switch model {
             case .modelS: return "model_s"
             case .model3: return "model_3"
@@ -29,11 +29,11 @@ struct VehicleViewModel {
         }
     }
 
-    var batteryLevelString: String {
+    public var batteryLevelString: String {
         "\(batteryLevel)%"
     }
 
-    var batteryLevelImageName: String {
+    public var batteryLevelImageName: String {
         switch batteryLevel {
             case 100: return "battery.100"
             case 75...100: return "battery.75"
@@ -42,7 +42,7 @@ struct VehicleViewModel {
         }
     }
 
-    var batteryColor: Color {
+    public var batteryColor: Color {
         switch batteryLevel {
             case 40...100: return .green
             case 20...40: return .yellow
@@ -51,7 +51,7 @@ struct VehicleViewModel {
         }
     }
 
-    init(
+    public init(
         id: Int,
         displayName: String,
         model: VehicleModel,

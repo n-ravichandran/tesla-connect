@@ -7,7 +7,6 @@
 
 import Combine
 import ConnectKit
-import ConnectNetworking
 import CryptoKit
 import Foundation
 import WebKit

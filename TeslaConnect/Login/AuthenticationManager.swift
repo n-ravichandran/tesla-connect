@@ -6,7 +6,6 @@
 //
 
 import ConnectKit
-import ConnectNetworking
 import Foundation
 
 public class AuthenticationManager: AuthTokenProvider {

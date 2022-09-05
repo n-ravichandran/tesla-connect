@@ -6,3 +6,4 @@
 //
 
 @_exported import ConnectCore
+@_exported import ConnectNetworking
