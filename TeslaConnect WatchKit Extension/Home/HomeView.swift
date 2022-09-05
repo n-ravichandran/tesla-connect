@@ -37,29 +37,40 @@ struct HomeView: View {
                     }
                 }
             }
+            .padding(.horizontal, 2)
 
             Spacer()
 
             HStack(spacing: 12) {
-                ZStack {
-                    Circle()
-                        .fill(.white)
-                        .frame(width: 45, height: 45)
-                    Image(systemName: "lock.fill")
-                        .font(.system(size: 18))
-                        .padding(8)
-                        .foregroundColor(.black)
-                }
+                Button {
 
-                ZStack {
-                    Circle()
-                        .fill(.white)
-                        .frame(width: 45, height: 45)
-                    Image(systemName: "fanblades.fill")
-                        .font(.system(size: 18))
-                        .padding(8)
-                        .foregroundColor(.black)
+                } label: {
+                    ZStack {
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 45, height: 45)
+                        Image(systemName: "lock.fill")
+                            .font(.system(size: 18))
+                            .padding(8)
+                            .foregroundColor(.black)
+                    }
+                }.buttonStyle(WatchCommandButtonStyle())
+
+
+                Button {
+
+                } label: {
+                    ZStack {
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 45, height: 45)
+                        Image(systemName: "fanblades.fill")
+                            .font(.system(size: 18))
+                            .padding(8)
+                            .foregroundColor(.black)
+                    }
                 }
+                .buttonStyle(WatchCommandButtonStyle())
             }
         }
     }

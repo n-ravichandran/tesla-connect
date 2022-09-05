@@ -22,7 +22,6 @@
 		E96842D928C60AF700996F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96842D828C60AF700996F81 /* Assets.xcassets */; };
 		E96842DF28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E96842DE28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E96842E428C60AF700996F81 /* TeslaConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96842E328C60AF700996F81 /* TeslaConnectApp.swift */; };
-		E96842E628C60AF700996F81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96842E528C60AF700996F81 /* ContentView.swift */; };
 		E96842E828C60AF700996F81 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96842E728C60AF700996F81 /* NotificationController.swift */; };
 		E96842EA28C60AF700996F81 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96842E928C60AF700996F81 /* NotificationView.swift */; };
 		E96842EC28C60AF700996F81 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96842EB28C60AF700996F81 /* ComplicationController.swift */; };
@@ -46,10 +45,10 @@
 		E9CCD41B27CC748B0065E3C5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD41A27CC748B0065E3C5 /* LoginView.swift */; };
 		E9CCD41D27CC77100065E3C5 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD41C27CC77100065E3C5 /* AuthenticationController.swift */; };
 		E9CCD42A27CD99D60065E3C5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E9CCD42927CD99D60065E3C5 /* Alamofire */; };
-		E9CCD43327CDA9EA0065E3C5 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43227CDA9EA0065E3C5 /* Keychain.swift */; };
-		E9CCD43627CDAA130065E3C5 /* GroupKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43527CDAA130065E3C5 /* GroupKeychain.swift */; };
 		E9CCD43927CDAC910065E3C5 /* AppObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43827CDAC910065E3C5 /* AppObject.swift */; };
 		E9CCD45C27D1AE950065E3C5 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD45B27D1AE950065E3C5 /* AuthenticationManager.swift */; };
+		E9F4221F28C650A1008290B0 /* WatchCommandButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4221E28C650A1008290B0 /* WatchCommandButtonStyle.swift */; };
+		E9F4222328C66ECC008290B0 /* ConnectKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9F4222228C66ECC008290B0 /* ConnectKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,7 +139,6 @@
 		E96842D828C60AF700996F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E96842DE28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TeslaConnect Watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96842E328C60AF700996F81 /* TeslaConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaConnectApp.swift; sourceTree = "<group>"; };
-		E96842E528C60AF700996F81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E96842E728C60AF700996F81 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		E96842E928C60AF700996F81 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		E96842EB28C60AF700996F81 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -170,10 +168,10 @@
 		E9CCD41827CC72A20065E3C5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		E9CCD41A27CC748B0065E3C5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E9CCD41C27CC77100065E3C5 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
-		E9CCD43227CDA9EA0065E3C5 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		E9CCD43527CDAA130065E3C5 /* GroupKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupKeychain.swift; sourceTree = "<group>"; };
 		E9CCD43827CDAC910065E3C5 /* AppObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppObject.swift; sourceTree = "<group>"; };
 		E9CCD45B27D1AE950065E3C5 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		E9F4221E28C650A1008290B0 /* WatchCommandButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCommandButtonStyle.swift; sourceTree = "<group>"; };
+		E9F4222028C66B1A008290B0 /* ConnectKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ConnectKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +203,7 @@
 				E9CCD42A27CD99D60065E3C5 /* Alamofire in Frameworks */,
 				E968423B28C5FB5500996F81 /* ConnectCore in Frameworks */,
 				E968422528C3A04200996F81 /* Lottie in Frameworks */,
+				E9F4222328C66ECC008290B0 /* ConnectKit in Frameworks */,
 				E968423E28C5FF5000996F81 /* ConnectNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,9 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				E968431B28C60F3900996F81 /* TeslaConnectWatchKitExtension.entitlements */,
-				E96842E328C60AF700996F81 /* TeslaConnectApp.swift */,
-				E968431C28C60FE900996F81 /* HomeView.swift */,
-				E96842E528C60AF700996F81 /* ContentView.swift */,
+				E9F4221D28C64EE1008290B0 /* App */,
+				E9F4221C28C64EBD008290B0 /* Home */,
 				E96842E728C60AF700996F81 /* NotificationController.swift */,
 				E96842E928C60AF700996F81 /* NotificationView.swift */,
 				E96842EB28C60AF700996F81 /* ComplicationController.swift */,
@@ -314,6 +312,7 @@
 				E96842FB28C60AF700996F81 /* TeslaConnect WatchTests */,
 				E968430528C60AF700996F81 /* TeslaConnect WatchUITests */,
 				E968423828C5FADE00996F81 /* ConnectCore */,
+				E9F4222028C66B1A008290B0 /* ConnectKit */,
 				E968423C28C5FE2A00996F81 /* ConnectNetworking */,
 				E9CCD3E727CC716A0065E3C5 /* Products */,
 				E968423928C5FB5500996F81 /* Frameworks */,
@@ -341,11 +340,10 @@
 				E968421128C3414500996F81 /* TeslaConnect.entitlements */,
 				E968422828C3A27600996F81 /* tesla-lottie.json */,
 				E9CCD3EB27CC716A0065E3C5 /* ContentView.swift */,
-				E968423028C3E1CB00996F81 /* ColorExtension.swift */,
 				E9CCD43727CDAC860065E3C5 /* App */,
 				E968421028C0831000996F81 /* ButtonStyle */,
+				E9F4222128C66BEF008290B0 /* Extensions */,
 				E968421728C34CD300996F81 /* Home */,
-				E9CCD43427CDA9F60065E3C5 /* Keychain */,
 				E9CCD42E27CDA6770065E3C5 /* Login */,
 				E9CCD43B27CDACEE0065E3C5 /* Persistence */,
 				E9CCD45227D19FD10065E3C5 /* Networking */,
@@ -392,15 +390,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		E9CCD43427CDA9F60065E3C5 /* Keychain */ = {
-			isa = PBXGroup;
-			children = (
-				E9CCD43227CDA9EA0065E3C5 /* Keychain.swift */,
-				E9CCD43527CDAA130065E3C5 /* GroupKeychain.swift */,
-			);
-			path = Keychain;
-			sourceTree = "<group>";
-		};
 		E9CCD43727CDAC860065E3C5 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +422,31 @@
 			children = (
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		E9F4221C28C64EBD008290B0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E968431C28C60FE900996F81 /* HomeView.swift */,
+				E9F4221E28C650A1008290B0 /* WatchCommandButtonStyle.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E9F4221D28C64EE1008290B0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E96842E328C60AF700996F81 /* TeslaConnectApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E9F4222128C66BEF008290B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E968423028C3E1CB00996F81 /* ColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +542,7 @@
 				E968422428C3A04200996F81 /* Lottie */,
 				E968423A28C5FB5500996F81 /* ConnectCore */,
 				E968423D28C5FF5000996F81 /* ConnectNetworking */,
+				E9F4222228C66ECC008290B0 /* ConnectKit */,
 			);
 			productName = TeslaConnect;
 			productReference = E9CCD3E627CC716A0065E3C5 /* TeslaConnect.app */;
@@ -698,7 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96842E828C60AF700996F81 /* NotificationController.swift in Sources */,
-				E96842E628C60AF700996F81 /* ContentView.swift in Sources */,
+				E9F4221F28C650A1008290B0 /* WatchCommandButtonStyle.swift in Sources */,
 				E96842EC28C60AF700996F81 /* ComplicationController.swift in Sources */,
 				E968431D28C6138800996F81 /* HomeView.swift in Sources */,
 				E96842E428C60AF700996F81 /* TeslaConnectApp.swift in Sources */,
@@ -733,7 +748,6 @@
 				E9CCD41B27CC748B0065E3C5 /* LoginView.swift in Sources */,
 				E968423328C4622600996F81 /* VehicleCardView.swift in Sources */,
 				E9CCD3F627CC716B0065E3C5 /* TeslaConnect.xcdatamodeld in Sources */,
-				E9CCD43327CDA9EA0065E3C5 /* Keychain.swift in Sources */,
 				E968420F28C082E800996F81 /* PrimaryButtonStyle.swift in Sources */,
 				E968421D28C356D000996F81 /* HomeViewModel.swift in Sources */,
 				E9CCD41927CC72A20065E3C5 /* WebView.swift in Sources */,
@@ -744,7 +758,6 @@
 				E968422228C370B600996F81 /* ActivityView.swift in Sources */,
 				E9CCD3EA27CC716A0065E3C5 /* TeslaConnectApp.swift in Sources */,
 				E968422F28C3E02F00996F81 /* VehicleViewModel.swift in Sources */,
-				E9CCD43627CDAA130065E3C5 /* GroupKeychain.swift in Sources */,
 				E968422728C3A1C100996F81 /* AnimatableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -830,7 +843,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -862,7 +875,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1368,6 +1381,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9CCD42827CD99D60065E3C5 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E9F4222228C66ECC008290B0 /* ConnectKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ConnectKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

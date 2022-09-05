@@ -6,7 +6,7 @@
 //
 
 import Combine
-import ConnectCore
+import ConnectKit
 import ConnectNetworking
 import CryptoKit
 import Foundation

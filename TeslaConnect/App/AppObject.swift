@@ -5,7 +5,7 @@
 //  Created by Niranjan Ravichandran on 2/28/22.
 //
 
-import ConnectCore
+import ConnectKit
 import ConnectNetworking
 import Foundation
 
