@@ -23,6 +23,8 @@
 		E968422F28C3E02F00996F81 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968422E28C3E02F00996F81 /* VehicleViewModel.swift */; };
 		E968423128C3E1CB00996F81 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968423028C3E1CB00996F81 /* ColorExtension.swift */; };
 		E968423328C4622600996F81 /* VehicleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968423228C4622600996F81 /* VehicleCardView.swift */; };
+		E968423528C5C13900996F81 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968423428C5C13900996F81 /* Formatter.swift */; };
+		E968423728C5C1B600996F81 /* UnitTemperatureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968423628C5C1B600996F81 /* UnitTemperatureExtensions.swift */; };
 		E994777327D2B18C00CE4337 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777227D2B18C00CE4337 /* CodableExtensions.swift */; };
 		E994777527D2E55E00CE4337 /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777427D2E55E00CE4337 /* HTTPStatus.swift */; };
 		E994777727D2E58C00CE4337 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777627D2E58C00CE4337 /* APIError.swift */; };
@@ -89,6 +91,8 @@
 		E968422E28C3E02F00996F81 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
 		E968423028C3E1CB00996F81 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		E968423228C4622600996F81 /* VehicleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCardView.swift; sourceTree = "<group>"; };
+		E968423428C5C13900996F81 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		E968423628C5C1B600996F81 /* UnitTemperatureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTemperatureExtensions.swift; sourceTree = "<group>"; };
 		E994777227D2B18C00CE4337 /* CodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
 		E994777427D2E55E00CE4337 /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
 		E994777627D2E58C00CE4337 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -204,7 +208,6 @@
 				E968421428C3464B00996F81 /* Info.plist */,
 				E968421128C3414500996F81 /* TeslaConnect.entitlements */,
 				E968422828C3A27600996F81 /* tesla-lottie.json */,
-				E9CCD3EB27CC716A0065E3C5 /* ContentView.swift */,
 				E9CCD43727CDAC860065E3C5 /* App */,
 				E968421028C0831000996F81 /* ButtonStyle */,
 				E9CCD42D27CDA66A0065E3C5 /* Extensions */,
@@ -256,6 +259,7 @@
 				E968421228C3455700996F81 /* BundleExtensions.swift */,
 				E968421828C34E4400996F81 /* DateExtensions.swift */,
 				E968423028C3E1CB00996F81 /* ColorExtension.swift */,
+				E968423628C5C1B600996F81 /* UnitTemperatureExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,8 +321,10 @@
 		E9CCD44027CDAE460065E3C5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				E9CCD43C27CDAD650065E3C5 /* OptionalType.swift */,
+				E9CCD3EB27CC716A0065E3C5 /* ContentView.swift */,
+				E968423428C5C13900996F81 /* Formatter.swift */,
 				E9CCD43E27CDAD7F0065E3C5 /* Logging.swift */,
+				E9CCD43C27CDAD650065E3C5 /* OptionalType.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -514,6 +520,8 @@
 				E968420F28C082E800996F81 /* PrimaryButtonStyle.swift in Sources */,
 				E968421D28C356D000996F81 /* HomeViewModel.swift in Sources */,
 				E968421F28C36D6100996F81 /* VehiclesAPIResponse.swift in Sources */,
+				E968423528C5C13900996F81 /* Formatter.swift in Sources */,
+				E968423728C5C1B600996F81 /* UnitTemperatureExtensions.swift in Sources */,
 				E9CCD41927CC72A20065E3C5 /* WebView.swift in Sources */,
 				E994777727D2E58C00CE4337 /* APIError.swift in Sources */,
 				E968421628C349DD00996F81 /* HomeView.swift in Sources */,

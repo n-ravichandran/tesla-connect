@@ -96,7 +96,7 @@ private extension HomeViewModel {
             batteryRange: 325,
             exteriorColor: "White",
             isLocked: true,
-            interiorTemperatureString: "22℃",
+            interiorTemperature: "22℃",
             isAnyWindowOpen: true
         )
     }
@@ -113,7 +113,7 @@ private extension HomeViewModel {
             batteryRange: 325,
             exteriorColor: "White",
             isLocked: isLocked,
-            interiorTemperatureString: "22℃",
+            interiorTemperature: "22℃",
             isAnyWindowOpen: true
         )
         update()

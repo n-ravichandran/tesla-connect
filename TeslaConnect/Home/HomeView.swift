@@ -25,7 +25,8 @@ struct HomeView: View {
                                     image: Image(vehicle.imageName),
                                     name: vehicle.displayName,
                                     batteryLevel: vehicle.batteryLevelString,
-                                    batteryImageName: vehicle.batteryLevelImageName
+                                    batteryImageName: vehicle.batteryLevelImageName,
+                                    batteryColor: vehicle.batteryColor
                                 )
 
                                 HStack(spacing: 20) {
@@ -55,15 +56,14 @@ struct HomeView: View {
                                 }
 
 
-                                HStack(alignment: .top) {
+                                HStack(spacing: 15) {
                                     LocationCardView(locationString: "N/A")
                                         .frame(maxWidth: .infinity)
 
                                     ClimateCardView(
-                                        temperatureString: vehicle.interiorTemperatureString,
+                                        temperatureString: vehicle.interiorTemperature,
                                         isAnyWindowOpen: vehicle.isAnyWindowOpen
-                                    )
-                                        .frame(maxWidth: .infinity)
+                                    ).frame(maxWidth: .infinity)
                                 }
                             }
                             .padding()
@@ -139,7 +139,7 @@ struct ClimateCardView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text("Climate")
-                        .font(.title3)
+                        .font(.headline)
                     Text("EXTERIOR: N/A")
                         .font(.footnote)
                         .foregroundColor(.gray)
@@ -159,6 +159,7 @@ struct ClimateCardView: View {
             .padding(.vertical, 4)
 
             Text("Windows \(isAnyWindowOpen ? "Open" : "Closed")")
+                .font(.callout)
         }
         .padding()
         .background(Color.Fill.tileBackground)
@@ -179,7 +180,8 @@ struct LocationCardView: View {
             HStack {
                 Image(systemName: "location.fill")
                 Text("Location")
-                    .font(.title3)
+                    .font(.headline)
+                Spacer()
             }
             Spacer()
             Text(locationString)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct VehicleViewModel {
     let id: Int
@@ -16,7 +17,7 @@ struct VehicleViewModel {
     let batteryRange: Double
     let exteriorColor: String
     let isLocked: Bool
-    let interiorTemperatureString: String
+    let interiorTemperature: String
     let isAnyWindowOpen: Bool
 
     var imageName: String {
@@ -41,6 +42,15 @@ struct VehicleViewModel {
         }
     }
 
+    var batteryColor: Color {
+        switch batteryLevel {
+            case 40...100: return .green
+            case 20...40: return .yellow
+            case 0...20: return .red
+            default: return .black
+        }
+    }
+
     init(
         id: Int,
         displayName: String,
@@ -50,7 +60,7 @@ struct VehicleViewModel {
         batteryRange: Double,
         exteriorColor: String,
         isLocked: Bool,
-        interiorTemperatureString: String,
+        interiorTemperature: String,
         isAnyWindowOpen: Bool
     ) {
         self.id = id
@@ -61,7 +71,7 @@ struct VehicleViewModel {
         self.batteryRange = batteryRange
         self.exteriorColor = exteriorColor
         self.isLocked = isLocked
-        self.interiorTemperatureString = interiorTemperatureString
+        self.interiorTemperature = interiorTemperature
         self.isAnyWindowOpen = isAnyWindowOpen
     }
 
@@ -71,12 +81,10 @@ struct VehicleViewModel {
         self.model = VehicleModel(value: data.vehicleConfig.carType)
         self.state = data.state
         self.batteryLevel = data.chargeState.batteryLevel
-        self.batteryRange = data.chargeState.batteryRange
+        self.batteryRange = data.chargeState.estBatteryRange
         self.exteriorColor = data.vehicleConfig.exteriorColor
         self.isLocked = data.vehicleState.locked
-        let temperature = data.climateState.insideTemp
-        let tempUnit = data.guiSettings.guiTemperatureUnits
-        self.interiorTemperatureString = String(format: "%.f°%@", temperature, tempUnit)
+        self.interiorTemperature = UnitTemperature.temperatureString(value: data.climateState.insideTemp, unitString: data.guiSettings.guiTemperatureUnits)
         self.isAnyWindowOpen = data.vehicleState.fdWindow != 0
         || data.vehicleState.fpWindow != 0
         || data.vehicleState.rdWindow != 0
