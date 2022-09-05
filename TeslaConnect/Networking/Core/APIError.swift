@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import ConnectCore
 import Foundation
 
 struct NetworkError: Error {

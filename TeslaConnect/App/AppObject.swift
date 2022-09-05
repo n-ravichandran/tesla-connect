@@ -5,6 +5,7 @@
 //  Created by Niranjan Ravichandran on 2/28/22.
 //
 
+import ConnectCore
 import Foundation
 
 class AppObject: ObservableObject {

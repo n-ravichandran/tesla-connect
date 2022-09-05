@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Optional where Wrapped == Bool {
+public extension Optional where Wrapped == Bool {
     
     var isTrue: Bool {
         self ?? false

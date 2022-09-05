@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E968420F28C082E800996F81 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968420E28C082E800996F81 /* PrimaryButtonStyle.swift */; };
-		E968421328C3455700996F81 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421228C3455700996F81 /* BundleExtensions.swift */; };
 		E968421628C349DD00996F81 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421528C349DD00996F81 /* HomeView.swift */; };
-		E968421928C34E4400996F81 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421828C34E4400996F81 /* DateExtensions.swift */; };
 		E968421B28C3519700996F81 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421A28C3519700996F81 /* Vehicle.swift */; };
 		E968421D28C356D000996F81 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421C28C356D000996F81 /* HomeViewModel.swift */; };
 		E968421F28C36D6100996F81 /* VehiclesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421E28C36D6100996F81 /* VehiclesAPIResponse.swift */; };
@@ -23,8 +21,7 @@
 		E968422F28C3E02F00996F81 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968422E28C3E02F00996F81 /* VehicleViewModel.swift */; };
 		E968423128C3E1CB00996F81 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968423028C3E1CB00996F81 /* ColorExtension.swift */; };
 		E968423328C4622600996F81 /* VehicleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968423228C4622600996F81 /* VehicleCardView.swift */; };
-		E968423528C5C13900996F81 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968423428C5C13900996F81 /* Formatter.swift */; };
-		E968423728C5C1B600996F81 /* UnitTemperatureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968423628C5C1B600996F81 /* UnitTemperatureExtensions.swift */; };
+		E968423B28C5FB5500996F81 /* ConnectCore in Frameworks */ = {isa = PBXBuildFile; productRef = E968423A28C5FB5500996F81 /* ConnectCore */; };
 		E994777327D2B18C00CE4337 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777227D2B18C00CE4337 /* CodableExtensions.swift */; };
 		E994777527D2E55E00CE4337 /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777427D2E55E00CE4337 /* HTTPStatus.swift */; };
 		E994777727D2E58C00CE4337 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994777627D2E58C00CE4337 /* APIError.swift */; };
@@ -40,15 +37,11 @@
 		E9CCD41927CC72A20065E3C5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD41827CC72A20065E3C5 /* WebView.swift */; };
 		E9CCD41B27CC748B0065E3C5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD41A27CC748B0065E3C5 /* LoginView.swift */; };
 		E9CCD41D27CC77100065E3C5 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD41C27CC77100065E3C5 /* AuthenticationController.swift */; };
-		E9CCD42727CD7F5D0065E3C5 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD42627CD7F5D0065E3C5 /* StringExtensions.swift */; };
 		E9CCD42A27CD99D60065E3C5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E9CCD42927CD99D60065E3C5 /* Alamofire */; };
 		E9CCD42C27CD9DBE0065E3C5 /* TeslaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD42B27CD9DBE0065E3C5 /* TeslaService.swift */; };
-		E9CCD43127CDA6A20065E3C5 /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43027CDA6A20065E3C5 /* OptionalExtensions.swift */; };
 		E9CCD43327CDA9EA0065E3C5 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43227CDA9EA0065E3C5 /* Keychain.swift */; };
 		E9CCD43627CDAA130065E3C5 /* GroupKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43527CDAA130065E3C5 /* GroupKeychain.swift */; };
 		E9CCD43927CDAC910065E3C5 /* AppObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43827CDAC910065E3C5 /* AppObject.swift */; };
-		E9CCD43D27CDAD650065E3C5 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43C27CDAD650065E3C5 /* OptionalType.swift */; };
-		E9CCD43F27CDAD7F0065E3C5 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD43E27CDAD7F0065E3C5 /* Logging.swift */; };
 		E9CCD45127D194A80065E3C5 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD45027D194A80065E3C5 /* NetworkClient.swift */; };
 		E9CCD45427D19FDE0065E3C5 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD45327D19FDE0065E3C5 /* APIEndpoint.swift */; };
 		E9CCD45727D1A3D20065E3C5 /* AuthAPIParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD45627D1A3D20065E3C5 /* AuthAPIParams.swift */; };
@@ -76,10 +69,8 @@
 /* Begin PBXFileReference section */
 		E968420E28C082E800996F81 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		E968421128C3414500996F81 /* TeslaConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeslaConnect.entitlements; sourceTree = "<group>"; };
-		E968421228C3455700996F81 /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		E968421428C3464B00996F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E968421528C349DD00996F81 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E968421828C34E4400996F81 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		E968421A28C3519700996F81 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		E968421C28C356D000996F81 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E968421E28C36D6100996F81 /* VehiclesAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesAPIResponse.swift; sourceTree = "<group>"; };
@@ -91,8 +82,7 @@
 		E968422E28C3E02F00996F81 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
 		E968423028C3E1CB00996F81 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		E968423228C4622600996F81 /* VehicleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCardView.swift; sourceTree = "<group>"; };
-		E968423428C5C13900996F81 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
-		E968423628C5C1B600996F81 /* UnitTemperatureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTemperatureExtensions.swift; sourceTree = "<group>"; };
+		E968423828C5FADE00996F81 /* ConnectCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ConnectCore; sourceTree = "<group>"; };
 		E994777227D2B18C00CE4337 /* CodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
 		E994777427D2E55E00CE4337 /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
 		E994777627D2E58C00CE4337 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -111,14 +101,10 @@
 		E9CCD41827CC72A20065E3C5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		E9CCD41A27CC748B0065E3C5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E9CCD41C27CC77100065E3C5 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
-		E9CCD42627CD7F5D0065E3C5 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		E9CCD42B27CD9DBE0065E3C5 /* TeslaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaService.swift; sourceTree = "<group>"; };
-		E9CCD43027CDA6A20065E3C5 /* OptionalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
 		E9CCD43227CDA9EA0065E3C5 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		E9CCD43527CDAA130065E3C5 /* GroupKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupKeychain.swift; sourceTree = "<group>"; };
 		E9CCD43827CDAC910065E3C5 /* AppObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppObject.swift; sourceTree = "<group>"; };
-		E9CCD43C27CDAD650065E3C5 /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
-		E9CCD43E27CDAD7F0065E3C5 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		E9CCD45027D194A80065E3C5 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		E9CCD45327D19FDE0065E3C5 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		E9CCD45627D1A3D20065E3C5 /* AuthAPIParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPIParams.swift; sourceTree = "<group>"; };
@@ -132,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9CCD42A27CD99D60065E3C5 /* Alamofire in Frameworks */,
+				E968423B28C5FB5500996F81 /* ConnectCore in Frameworks */,
 				E968422528C3A04200996F81 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,13 +169,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E968423928C5FB5500996F81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E9CCD3DD27CC716A0065E3C5 = {
 			isa = PBXGroup;
 			children = (
 				E9CCD3E827CC716A0065E3C5 /* TeslaConnect */,
 				E9CCD3FE27CC716B0065E3C5 /* TeslaConnectTests */,
 				E9CCD40827CC716B0065E3C5 /* TeslaConnectUITests */,
+				E968423828C5FADE00996F81 /* ConnectCore */,
 				E9CCD3E727CC716A0065E3C5 /* Products */,
+				E968423928C5FB5500996F81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,16 +204,16 @@
 				E968421428C3464B00996F81 /* Info.plist */,
 				E968421128C3414500996F81 /* TeslaConnect.entitlements */,
 				E968422828C3A27600996F81 /* tesla-lottie.json */,
+				E9CCD3EB27CC716A0065E3C5 /* ContentView.swift */,
+				E968423028C3E1CB00996F81 /* ColorExtension.swift */,
 				E9CCD43727CDAC860065E3C5 /* App */,
 				E968421028C0831000996F81 /* ButtonStyle */,
-				E9CCD42D27CDA66A0065E3C5 /* Extensions */,
 				E968421728C34CD300996F81 /* Home */,
 				E9CCD43427CDA9F60065E3C5 /* Keychain */,
 				E9CCD42E27CDA6770065E3C5 /* Login */,
 				E968422028C370A800996F81 /* Models */,
 				E9CCD43B27CDACEE0065E3C5 /* Persistence */,
 				E9CCD45227D19FD10065E3C5 /* Networking */,
-				E9CCD44027CDAE460065E3C5 /* Utility */,
 				E9CCD43A27CDACAB0065E3C5 /* Views */,
 				E9CCD3ED27CC716B0065E3C5 /* Assets.xcassets */,
 				E9CCD3F427CC716B0065E3C5 /* TeslaConnect.xcdatamodeld */,
@@ -249,19 +245,6 @@
 				E9CCD40B27CC716B0065E3C5 /* TeslaConnectUITestsLaunchTests.swift */,
 			);
 			path = TeslaConnectUITests;
-			sourceTree = "<group>";
-		};
-		E9CCD42D27CDA66A0065E3C5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E9CCD42627CD7F5D0065E3C5 /* StringExtensions.swift */,
-				E9CCD43027CDA6A20065E3C5 /* OptionalExtensions.swift */,
-				E968421228C3455700996F81 /* BundleExtensions.swift */,
-				E968421828C34E4400996F81 /* DateExtensions.swift */,
-				E968423028C3E1CB00996F81 /* ColorExtension.swift */,
-				E968423628C5C1B600996F81 /* UnitTemperatureExtensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E9CCD42E27CDA6770065E3C5 /* Login */ = {
@@ -318,17 +301,6 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		E9CCD44027CDAE460065E3C5 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				E9CCD3EB27CC716A0065E3C5 /* ContentView.swift */,
-				E968423428C5C13900996F81 /* Formatter.swift */,
-				E9CCD43E27CDAD7F0065E3C5 /* Logging.swift */,
-				E9CCD43C27CDAD650065E3C5 /* OptionalType.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
 		E9CCD45227D19FD10065E3C5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +352,7 @@
 			packageProductDependencies = (
 				E9CCD42927CD99D60065E3C5 /* Alamofire */,
 				E968422428C3A04200996F81 /* Lottie */,
+				E968423A28C5FB5500996F81 /* ConnectCore */,
 			);
 			productName = TeslaConnect;
 			productReference = E9CCD3E627CC716A0065E3C5 /* TeslaConnect.app */;
@@ -501,27 +474,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9CCD45A27D1AAB70065E3C5 /* NetworkManager.swift in Sources */,
-				E9CCD42727CD7F5D0065E3C5 /* StringExtensions.swift in Sources */,
-				E9CCD43F27CDAD7F0065E3C5 /* Logging.swift in Sources */,
 				E968423128C3E1CB00996F81 /* ColorExtension.swift in Sources */,
 				E9CCD41D27CC77100065E3C5 /* AuthenticationController.swift in Sources */,
 				E968422B28C3CC7400996F81 /* VehicleConfig.swift in Sources */,
 				E968421B28C3519700996F81 /* Vehicle.swift in Sources */,
 				E9CCD43927CDAC910065E3C5 /* AppObject.swift in Sources */,
-				E968421928C34E4400996F81 /* DateExtensions.swift in Sources */,
 				E994777527D2E55E00CE4337 /* HTTPStatus.swift in Sources */,
 				E9CCD41B27CC748B0065E3C5 /* LoginView.swift in Sources */,
 				E968423328C4622600996F81 /* VehicleCardView.swift in Sources */,
-				E9CCD43127CDA6A20065E3C5 /* OptionalExtensions.swift in Sources */,
-				E9CCD43D27CDAD650065E3C5 /* OptionalType.swift in Sources */,
 				E9CCD45127D194A80065E3C5 /* NetworkClient.swift in Sources */,
 				E9CCD3F627CC716B0065E3C5 /* TeslaConnect.xcdatamodeld in Sources */,
 				E9CCD43327CDA9EA0065E3C5 /* Keychain.swift in Sources */,
 				E968420F28C082E800996F81 /* PrimaryButtonStyle.swift in Sources */,
 				E968421D28C356D000996F81 /* HomeViewModel.swift in Sources */,
 				E968421F28C36D6100996F81 /* VehiclesAPIResponse.swift in Sources */,
-				E968423528C5C13900996F81 /* Formatter.swift in Sources */,
-				E968423728C5C1B600996F81 /* UnitTemperatureExtensions.swift in Sources */,
 				E9CCD41927CC72A20065E3C5 /* WebView.swift in Sources */,
 				E994777727D2E58C00CE4337 /* APIError.swift in Sources */,
 				E968421628C349DD00996F81 /* HomeView.swift in Sources */,
@@ -538,7 +504,6 @@
 				E9CCD43627CDAA130065E3C5 /* GroupKeychain.swift in Sources */,
 				E994777327D2B18C00CE4337 /* CodableExtensions.swift in Sources */,
 				E968422728C3A1C100996F81 /* AnimatableView.swift in Sources */,
-				E968421328C3455700996F81 /* BundleExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,6 +861,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E968422328C3A04200996F81 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		E968423A28C5FB5500996F81 /* ConnectCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ConnectCore;
 		};
 		E9CCD42927CD99D60065E3C5 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

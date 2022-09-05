@@ -5,7 +5,7 @@
 //  Created by Niranjan Ravichandran on 9/4/22.
 //
 
-import Foundation
+import ConnectCore
 import SwiftUI
 
 struct VehicleViewModel {

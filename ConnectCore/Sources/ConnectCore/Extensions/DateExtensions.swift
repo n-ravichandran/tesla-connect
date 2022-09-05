@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
 
     public static var hourOfTheDayMessage: String {
         let hour = Calendar.current.component(.hour, from: Date())

@@ -6,6 +6,7 @@
 //
 
 import Combine
+import ConnectCore
 import CryptoKit
 import Foundation
 import WebKit

@@ -5,6 +5,7 @@
 //  Created by Niranjan Ravichandran on 3/4/22.
 //
 
+import ConnectCore
 import Foundation
 
 extension Encodable {
