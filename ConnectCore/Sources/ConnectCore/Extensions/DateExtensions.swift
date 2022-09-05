@@ -9,7 +9,7 @@ import Foundation
 
 public extension Date {
 
-    public static var hourOfTheDayMessage: String {
+    static var hourOfTheDayMessage: String {
         let hour = Calendar.current.component(.hour, from: Date())
         let hourText = hourOfTheDay(hour: hour)
         return "Good \(hourText)!"
