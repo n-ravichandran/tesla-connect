@@ -9,11 +9,11 @@ import Foundation
 
 import Foundation
 
-protocol APIService {
+public protocol APIService {
     var client: NetworkClient { get }
 }
 
-extension APIService {
+public extension APIService {
     var client: NetworkClient { NetworkManager.shared.client }
 }
 

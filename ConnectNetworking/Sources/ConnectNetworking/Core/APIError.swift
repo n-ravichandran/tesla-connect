@@ -9,13 +9,13 @@ import Alamofire
 import ConnectCore
 import Foundation
 
-struct NetworkError: Error {
+public struct NetworkError: Error {
     let afError: AFError
     let httpStatus: HTTPStatus
     let underlyingError: Error?
 }
 
-enum APIError: Error {
+public enum APIError: Error {
     
     case cancelled
     case backend(Error)
@@ -26,7 +26,7 @@ enum APIError: Error {
     case unauthorized
     case forbidden
     
-    init(error: AFError) {
+    public init(error: AFError) {
         switch error {
         case .explicitlyCancelled:
             self = .cancelled
@@ -35,7 +35,7 @@ enum APIError: Error {
         }
     }
     
-    init(afError: AFError?, underlyingError: Error?, response: HTTPURLResponse?) {
+    public init(afError: AFError?, underlyingError: Error?, response: HTTPURLResponse?) {
         if let error = underlyingError {
             let errorCode = (error as NSError).code
             

@@ -6,26 +6,29 @@
 //
 
 import Combine
+import ConnectCore
 import Foundation
 import Alamofire
 
-class TeslaService: APIService {
+public class TeslaService: APIService {
 
-    func getVehicles() async throws -> [Vehicle] {
+    public init() {}
+
+    public func getVehicles() async throws -> [Vehicle] {
         try await client.request(
             requestBuilder: APIEndpoint.vehicles,
             responseType: VehicelsAPIResponse.self
         ).response
     }
 
-    func getVehicle(for id: Int) async throws -> Vehicle {
+    public func getVehicle(for id: Int) async throws -> Vehicle {
         try await client.request(
             requestBuilder: APIEndpoint.vehicle(id: id),
             responseType: Vehicle.self
         )
     }
 
-    func getVehicleData(for id: Int) async throws -> VehicleData {
+    public func getVehicleData(for id: Int) async throws -> VehicleData {
         try await client.request(
             requestBuilder: APIEndpoint.vehicleData(id: id),
             responseType: VehicleData.self
@@ -37,7 +40,7 @@ class TeslaService: APIService {
 // MARK: - Authentication
 
 // Todo: Migrate to use async/await
-extension TeslaService {
+public extension TeslaService {
 
     func getBearerToken(from authorizationCode: String, codeVerifier: String) -> AnyPublisher<Credentials, APIError> {
         let parameters = BearerTokenRequestParams(code: authorizationCode, codeVerifier: codeVerifier)

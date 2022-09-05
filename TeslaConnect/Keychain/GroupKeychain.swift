@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ConnectNetworking
 
 private let keychain = Keychain(service: Bundle.main.keychainService, group: Bundle.main.keychainGroup)
 

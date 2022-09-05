@@ -7,25 +7,25 @@
 
 import Foundation
 
-struct VehicleData: Codable {
-    let id: Int
-    let userID, vehicleID: Int
-    let vin, displayName, optionCodes: String
-//    let color: String? // Todo: Confirm type
-    let accessType: String
-    let tokens: [String]
-    let state: String
-    let inService: Bool
-    let idString: String
-    let calendarEnabled: Bool
-    let apiVersion: Int
-    let backseatToken, backseatTokenUpdatedAt: String? // Todo: Confirm type
-    let driveState: DriveState
-    let climateState: ClimateState
-    let chargeState: ChargeState
-    let guiSettings: GUISettings
-    let vehicleState: VehicleState
-    let vehicleConfig: VehicleConfig
+public struct VehicleData: Codable {
+    public let id: Int
+    public let userID, vehicleID: Int
+    public let vin, displayName, optionCodes: String
+//    public let color: String? // Todo: Confirm type
+    public let accessType: String
+    public let tokens: [String]
+    public let state: String
+    public let inService: Bool
+    public let idString: String
+    public let calendarEnabled: Bool
+    public let apiVersion: Int
+    public let backseatToken, backseatTokenUpdatedAt: String? // Todo: Confirm type
+    public let driveState: DriveState
+    public let climateState: ClimateState
+    public let chargeState: ChargeState
+    public let guiSettings: GUISettings
+    public let vehicleState: VehicleState
+    public let vehicleConfig: VehicleConfig
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -53,39 +53,39 @@ struct VehicleData: Codable {
 }
 
 // MARK: - ChargeState
-struct ChargeState: Codable {
-    let batteryHeaterOn: Bool
-    let batteryLevel: Int
-    let batteryRange: Double
-    let chargeCurrentRequest, chargeCurrentRequestMax: Int
-    let chargeEnableRequest: Bool
-    let chargeEnergyAdded: Double
-    let chargeLimitSoc, chargeLimitSocMax, chargeLimitSocMin, chargeLimitSocStd: Int
-    let chargeMilesAddedIdeal, chargeMilesAddedRated: Int
-    let chargePortColdWeatherMode: String? // Todo: Confirm type
-    let chargePortDoorOpen: Bool
-    let chargePortLatch: String
-    let chargeRate: Int
-    let chargeToMaxRange: Bool
-    let chargerActualCurrent, chargerPhases, chargerPilotCurrent, chargerPower: Int
-    let chargerVoltage: Int
-    let chargingState, connChargeCable: String
-    let estBatteryRange: Double
-    let fastChargerBrand: String
-    let fastChargerPresent: Bool
-    let fastChargerType: String
-    let idealBatteryRange: Double
-    let managedChargingActive: Bool
-    let managedChargingStartTime: Date? // Todo: Confirm type
-    let managedChargingUserCanceled: Bool
-    let maxRangeChargeCounter, minutesToFullCharge: Int
-    let notEnoughPowerToHeat, scheduledChargingPending: Bool
-    let scheduledChargingStartTime: Date? // Todo: Confirm type
-    let timeToFullCharge: Double
-    let timestamp: Int
-    let tripCharging: Bool
-    let usableBatteryLevel: Int
-    let userChargeEnableRequest: String? // Todo: Confirm type
+public struct ChargeState: Codable {
+    public let batteryHeaterOn: Bool
+    public let batteryLevel: Int
+    public let batteryRange: Double
+    public let chargeCurrentRequest, chargeCurrentRequestMax: Int
+    public let chargeEnableRequest: Bool
+    public let chargeEnergyAdded: Double
+    public let chargeLimitSoc, chargeLimitSocMax, chargeLimitSocMin, chargeLimitSocStd: Int
+    public let chargeMilesAddedIdeal, chargeMilesAddedRated: Int
+    public let chargePortColdWeatherMode: String? // Todo: Confirm type
+    public let chargePortDoorOpen: Bool
+    public let chargePortLatch: String
+    public let chargeRate: Int
+    public let chargeToMaxRange: Bool
+    public let chargerActualCurrent, chargerPhases, chargerPilotCurrent, chargerPower: Int
+    public let chargerVoltage: Int
+    public let chargingState, connChargeCable: String
+    public let estBatteryRange: Double
+    public let fastChargerBrand: String
+    public let fastChargerPresent: Bool
+    public let fastChargerType: String
+    public let idealBatteryRange: Double
+    public let managedChargingActive: Bool
+    public let managedChargingStartTime: Date? // Todo: Confirm type
+    public let managedChargingUserCanceled: Bool
+    public let maxRangeChargeCounter, minutesToFullCharge: Int
+    public let notEnoughPowerToHeat, scheduledChargingPending: Bool
+    public let scheduledChargingStartTime: Date? // Todo: Confirm type
+    public let timeToFullCharge: Double
+    public let timestamp: Int
+    public let tripCharging: Bool
+    public let usableBatteryLevel: Int
+    public let userChargeEnableRequest: String? // Todo: Confirm type
 
     enum CodingKeys: String, CodingKey {
         case batteryHeaterOn = "battery_heater_on"
@@ -135,22 +135,22 @@ struct ChargeState: Codable {
 }
 
 // MARK: - ClimateState
-struct ClimateState: Codable {
-    let batteryHeater, batteryHeaterNoPower: Bool
-    let climateKeeperMode: String
-    let defrostMode: Int
-    let driverTempSetting: Double
-    let fanStatus: Int
-    let insideTemp: Double
-    let isAutoConditioningOn, isClimateOn, isFrontDefrosterOn, isPreconditioning: Bool
-    let isRearDefrosterOn: Bool
-    let leftTempDirection, maxAvailTemp, minAvailTemp, outsideTemp: Int
-    let passengerTempSetting: Double
-    let remoteHeaterControlEnabled: Bool
-    let rightTempDirection, seatHeaterLeft, seatHeaterRight: Int
-    let sideMirrorHeaters: Bool
-    let timestamp: Int
-    let wiperBladeHeater: Bool
+public struct ClimateState: Codable {
+    public let batteryHeater, batteryHeaterNoPower: Bool
+    public let climateKeeperMode: String
+    public let defrostMode: Int
+    public let driverTempSetting: Double
+    public let fanStatus: Int
+    public let insideTemp: Double
+    public let isAutoConditioningOn, isClimateOn, isFrontDefrosterOn, isPreconditioning: Bool
+    public let isRearDefrosterOn: Bool
+    public let leftTempDirection, maxAvailTemp, minAvailTemp, outsideTemp: Int
+    public let passengerTempSetting: Double
+    public let remoteHeaterControlEnabled: Bool
+    public let rightTempDirection, seatHeaterLeft, seatHeaterRight: Int
+    public let sideMirrorHeaters: Bool
+    public let timestamp: Int
+    public let wiperBladeHeater: Bool
 
     enum CodingKeys: String, CodingKey {
         case batteryHeater = "battery_heater"
@@ -181,15 +181,15 @@ struct ClimateState: Codable {
 }
 
 // MARK: - DriveState
-struct DriveState: Codable {
-    let gpsAsOf, heading: Int
-    let latitude, longitude, nativeLatitude: Double
-    let nativeLocationSupported: Int
-    let nativeLongitude: Double
-    let nativeType: String
-    let power: Int
-    let shiftState, speed: String? // Todo: Confirm type
-    let timestamp: Int
+public struct DriveState: Codable {
+    public let gpsAsOf, heading: Int
+    public let latitude, longitude, nativeLatitude: Double
+    public let nativeLocationSupported: Int
+    public let nativeLongitude: Double
+    public let nativeType: String
+    public let power: Int
+    public let shiftState, speed: String? // Todo: Confirm type
+    public let timestamp: Int
 
     enum CodingKeys: String, CodingKey {
         case gpsAsOf = "gps_as_of"
@@ -206,11 +206,11 @@ struct DriveState: Codable {
 
 // MARK: - GUISettings
 
-struct GUISettings: Codable {
-    let gui24_HourTime: Bool
-    let guiChargeRateUnits, guiDistanceUnits, guiRangeDisplay, guiTemperatureUnits: String
-    let showRangeUnits: Bool
-    let timestamp: Int
+public struct GUISettings: Codable {
+    public let gui24_HourTime: Bool
+    public let guiChargeRateUnits, guiDistanceUnits, guiRangeDisplay, guiTemperatureUnits: String
+    public let showRangeUnits: Bool
+    public let timestamp: Int
 
     enum CodingKeys: String, CodingKey {
         case gui24_HourTime = "gui_24_hour_time"
@@ -225,32 +225,32 @@ struct GUISettings: Codable {
 
 // MARK: - VehicleState
 
-struct VehicleState: Codable {
-    let apiVersion: Int
-    let autoparkStateV2, autoparkStyle: String
-    let calendarSupported: Bool
-    let carVersion: String
-    let centerDisplayState, df, dr, fdWindow: Int
-    let fpWindow, ft, homelinkDeviceCount: Int
-    let homelinkNearby, isUserPresent: Bool
-    let lastAutoparkError: String
-    let locked: Bool
-    let mediaState: MediaState
-    let notificationsSupported: Bool
-    let odometer: Double
-    let parsedCalendarSupported: Bool
-    let pf, pr, rdWindow: Int
-    let remoteStart, remoteStartEnabled, remoteStartSupported: Bool
-    let rpWindow, rt: Int
-    let sentryMode, sentryModeAvailable, smartSummonAvailable: Bool
-    let softwareUpdate: SoftwareUpdate
-    let speedLimitMode: SpeedLimitMode
-    let summonStandbyModeEnabled: Bool
-    let sunRoofPercentOpen: Int
-    let sunRoofState: String
-    let timestamp: Int
-    let valetMode, valetPinNeeded: Bool
-    let vehicleName: String?
+public struct VehicleState: Codable {
+    public let apiVersion: Int
+    public let autoparkStateV2, autoparkStyle: String
+    public let calendarSupported: Bool
+    public let carVersion: String
+    public let centerDisplayState, df, dr, fdWindow: Int
+    public let fpWindow, ft, homelinkDeviceCount: Int
+    public let homelinkNearby, isUserPresent: Bool
+    public let lastAutoparkError: String
+    public let locked: Bool
+    public let mediaState: MediaState
+    public let notificationsSupported: Bool
+    public let odometer: Double
+    public let parsedCalendarSupported: Bool
+    public let pf, pr, rdWindow: Int
+    public let remoteStart, remoteStartEnabled, remoteStartSupported: Bool
+    public let rpWindow, rt: Int
+    public let sentryMode, sentryModeAvailable, smartSummonAvailable: Bool
+    public let softwareUpdate: SoftwareUpdate
+    public let speedLimitMode: SpeedLimitMode
+    public let summonStandbyModeEnabled: Bool
+    public let sunRoofPercentOpen: Int
+    public let sunRoofState: String
+    public let timestamp: Int
+    public let valetMode, valetPinNeeded: Bool
+    public let vehicleName: String?
 
     enum CodingKeys: String, CodingKey {
         case apiVersion = "api_version"
@@ -296,8 +296,8 @@ struct VehicleState: Codable {
 
 // MARK: - MediaState
 
-struct MediaState: Codable {
-    let remoteControlEnabled: Bool
+public struct MediaState: Codable {
+    public let remoteControlEnabled: Bool
 
     enum CodingKeys: String, CodingKey {
         case remoteControlEnabled = "remote_control_enabled"
@@ -306,9 +306,9 @@ struct MediaState: Codable {
 
 // MARK: - SoftwareUpdate
 
-struct SoftwareUpdate: Codable {
-    let downloadPerc, expectedDurationSEC, installPerc: Int
-    let status, version: String
+public struct SoftwareUpdate: Codable {
+    public let downloadPerc, expectedDurationSEC, installPerc: Int
+    public let status, version: String
 
     enum CodingKeys: String, CodingKey {
         case downloadPerc = "download_perc"
@@ -320,10 +320,10 @@ struct SoftwareUpdate: Codable {
 
 // MARK: - SpeedLimitMode
 
-struct SpeedLimitMode: Codable {
-    let active: Bool
-    let currentLimitMph, maxLimitMph, minLimitMph: Int
-    let pinCodeSet: Bool
+public struct SpeedLimitMode: Codable {
+    public let active: Bool
+    public let currentLimitMph, maxLimitMph, minLimitMph: Int
+    public let pinCodeSet: Bool
 
     enum CodingKeys: String, CodingKey {
         case active

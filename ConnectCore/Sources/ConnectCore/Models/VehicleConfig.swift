@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct VehicleConfig: Codable {
-    let canAcceptNavigationRequests, canActuateTrunks: Bool
-    let carSpecialType, carType, chargePortType: String
-    let eceRestrictions, euVehicle: Bool
-    let exteriorColor: String
-    let hasAirSuspension, hasLudicrousMode, motorizedChargePort, plg: Bool
-    let rearSeatHeaters, rearSeatType: Int
-    let rhd: Bool
-    let roofColor: String
-    let seatType: Int
-    let spoilerType: String
-    let sunRoofInstalled: Int
-    let thirdRowSeats: String
-    let timestamp: Int
-    let trimBadging: String
-    let useRangeBadging: Bool
-    let wheelType: String
+public struct VehicleConfig: Codable {
+    public let canAcceptNavigationRequests, canActuateTrunks: Bool
+    public let carSpecialType, carType, chargePortType: String
+    public let eceRestrictions, euVehicle: Bool
+    public let exteriorColor: String
+    public let hasAirSuspension, hasLudicrousMode, motorizedChargePort, plg: Bool
+    public let rearSeatHeaters, rearSeatType: Int
+    public let rhd: Bool
+    public let roofColor: String
+    public let seatType: Int
+    public let spoilerType: String
+    public let sunRoofInstalled: Int
+    public let thirdRowSeats: String
+    public let timestamp: Int
+    public let trimBadging: String
+    public let useRangeBadging: Bool
+    public let wheelType: String
 
     enum CodingKeys: String, CodingKey {
         case canAcceptNavigationRequests = "can_accept_navigation_requests"

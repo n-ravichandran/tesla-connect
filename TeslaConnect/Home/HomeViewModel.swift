@@ -6,6 +6,7 @@
 //
 
 import ConnectCore
+import ConnectNetworking
 import UIKit
 
 enum VehicleError: Error {

@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct Vehicle: Codable {
-    let id: Int
-    let vehicleID: Int
-    let vin: String
-    let displayName: String
-    let optionCodes: String
-    let color: String?
-    let tokens: [String]
-    let state: String
-    let inService: Bool
-    let idString: String
-    let calendarEnabled: Bool
-    let apiVersion: Int
+public struct Vehicle: Codable {
+    public let id: Int
+    public let vehicleID: Int
+    public let vin: String
+    public let displayName: String
+    public let optionCodes: String
+    public let color: String?
+    public let tokens: [String]
+    public let state: String
+    public let inService: Bool
+    public let idString: String
+    public let calendarEnabled: Bool
+    public let apiVersion: Int
 
     init(
         id: Int,
@@ -69,7 +69,7 @@ public enum VehicleModel: String {
     case modelX = "modelx"
     case modelY = "modely"
 
-    init(value: String) {
+    public init(value: String) {
         switch value {
             case Self.modelS.rawValue:
                 self = .modelS

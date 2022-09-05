@@ -5,6 +5,7 @@
 //  Created by Niranjan Ravichandran on 9/3/22.
 //
 
+import ConnectCore
 import Foundation
 
 struct VehicelsAPIResponse: Decodable {

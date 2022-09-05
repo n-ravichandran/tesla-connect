@@ -6,6 +6,7 @@
 //
 
 import ConnectCore
+import ConnectNetworking
 import Foundation
 
 class AppObject: ObservableObject {

@@ -75,7 +75,7 @@ struct VehicleViewModel {
         self.isAnyWindowOpen = isAnyWindowOpen
     }
 
-    init(data: VehicleData) {
+    public init(data: VehicleData) {
         self.id = data.id
         self.displayName = data.displayName
         self.model = VehicleModel(value: data.vehicleConfig.carType)
