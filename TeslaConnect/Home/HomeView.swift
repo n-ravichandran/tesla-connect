@@ -11,6 +11,7 @@ struct HomeView: View {
 
     @EnvironmentObject var appObject: AppObject
     @StateObject private var homeViewModel = HomeViewModel()
+    @State private var showSettings = false
 
     var body: some View {
         NavigationView {
@@ -30,7 +31,7 @@ struct HomeView: View {
                                 )
 
                                 HStack(spacing: 20) {
-                                    CommandCardView(
+                                    CommandButton(
                                         title: $homeViewModel.unlockCardViewModel.title,
                                         iconName: $homeViewModel.unlockCardViewModel.iconName
                                     ) {
@@ -38,7 +39,7 @@ struct HomeView: View {
                                     }
                                     .frame(maxWidth: .infinity)
 
-                                    CommandCardView(
+                                    CommandButton(
                                         title: .constant("Open Frunk"),
                                         iconName: .constant("car.fill")
                                     ) {
@@ -46,7 +47,7 @@ struct HomeView: View {
                                     }
                                     .frame(maxWidth: .infinity)
 
-                                    CommandCardView(
+                                    CommandButton(
                                         title: .constant("Climate"),
                                         iconName: .constant("fanblades.fill")
                                     ) {
@@ -57,7 +58,7 @@ struct HomeView: View {
 
 
                                 HStack(spacing: 15) {
-                                    LocationCardView(locationString: "N/A")
+                                    LocationCardView(viewModel: $homeViewModel.locationCardViewModel)
                                         .frame(maxWidth: .infinity)
 
                                     ClimateCardView(
@@ -77,9 +78,9 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem() {
                     Button {
-                        appObject.logout()
+                        showSettings.toggle()
                     } label: {
-                        Image(systemName: "rectangle.portrait.and.arrow.right")
+                        Image(systemName: "ellipsis")
                     }
 
                 }
@@ -87,19 +88,24 @@ struct HomeView: View {
             .onAppear {
                 homeViewModel.loadVehicles()
             }
+            .sheet(isPresented: $showSettings) {
+                SettingsView()
+            }
         }
+        .accentColor(.Tint.navigationBar)
     }
 }
 
-struct CommandCardView: View {
+struct CommandButton: View {
 
-//    @GestureState private var isDetectingPress = false
     @Binding var title: String
     @Binding var iconName: String
     var action: (() -> Void)?
 
     var body: some View {
-        VStack {
+        Button {
+            action?()
+        } label: {
             ZStack {
                 Circle()
                     .fill(Color.Fill.commandButton)
@@ -111,18 +117,8 @@ struct CommandCardView: View {
             }
             Text(title)
                 .font(.footnote)
-        }
-        .onTapGesture {
-            action?()
-        }
-//        .scaleEffect(isDetectingPress ? 0.95 : 1.0)
-//        .gesture (
-//            LongPressGesture(minimumDuration: 1.0)
-//                .updating($isDetectingPress) { currentstate, gestureState, transaction in
-//                    transaction.animation = Animation.easeInOut(duration: 0.2)
-//                    gestureState = currentstate
-//                }
-//        )
+        }.buttonStyle(OpacityButtonStyle())
+
     }
 
 }
@@ -137,7 +133,7 @@ struct ClimateCardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 8) {
                     Text("Climate")
                         .font(.headline)
                     Text("EXTERIOR: N/A")
@@ -147,11 +143,11 @@ struct ClimateCardView: View {
                 Spacer()
             }
 
-            Spacer(minLength: 15)
+            Spacer()
 
             HStack {
                 Text(temperatureString)
-                    .font(.title)
+                    .font(.system(size: 40, weight: .regular))
                 Spacer()
                 Image(systemName: "snowflake") // Todo: Update icon based on heat/cool
                     .foregroundColor(.blue)
@@ -160,33 +156,6 @@ struct ClimateCardView: View {
 
             Text("Windows \(isAnyWindowOpen ? "Open" : "Closed")")
                 .font(.callout)
-        }
-        .padding()
-        .background(Color.Fill.tileBackground)
-        .cornerRadius(15)
-        .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.2), radius: 10, x: 0, y: 0)
-    }
-
-}
-
-// MARK: - LocationCardView
-
-struct LocationCardView: View {
-
-    var locationString: String
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Image(systemName: "location.fill")
-                Text("Location")
-                    .font(.headline)
-                Spacer()
-            }
-            Spacer()
-            Text(locationString)
-                .font(.footnote)
-                .foregroundColor(.gray)
         }
         .padding()
         .background(Color.Fill.tileBackground)

@@ -18,4 +18,8 @@ extension Color {
         static let commandButtonText = Color("commandButtonText")
     }
 
+    enum Tint {
+        static let navigationBar = Color("navigationBarTint")
+    }
+
 }

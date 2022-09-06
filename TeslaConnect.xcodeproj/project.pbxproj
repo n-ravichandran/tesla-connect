@@ -48,6 +48,11 @@
 		E9CCD45C27D1AE950065E3C5 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD45B27D1AE950065E3C5 /* AuthenticationManager.swift */; };
 		E9F4221F28C650A1008290B0 /* WatchCommandButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4221E28C650A1008290B0 /* WatchCommandButtonStyle.swift */; };
 		E9F4222328C66ECC008290B0 /* ConnectKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9F4222228C66ECC008290B0 /* ConnectKit */; };
+		E9F4222528C705F1008290B0 /* OpacityButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4222428C705F1008290B0 /* OpacityButtonStyle.swift */; };
+		E9F4222728C7096F008290B0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4222628C7096F008290B0 /* SettingsView.swift */; };
+		E9F4222A28C71C6D008290B0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4222928C71C6D008290B0 /* MapView.swift */; };
+		E9F4222E28C72CAF008290B0 /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4222D28C72CAF008290B0 /* LocationCardView.swift */; };
+		E9F4223028C732D0008290B0 /* PlacemarkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4222F28C732D0008290B0 /* PlacemarkExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +175,11 @@
 		E9CCD45B27D1AE950065E3C5 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		E9F4221E28C650A1008290B0 /* WatchCommandButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCommandButtonStyle.swift; sourceTree = "<group>"; };
 		E9F4222028C66B1A008290B0 /* ConnectKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ConnectKit; sourceTree = "<group>"; };
+		E9F4222428C705F1008290B0 /* OpacityButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityButtonStyle.swift; sourceTree = "<group>"; };
+		E9F4222628C7096F008290B0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E9F4222928C71C6D008290B0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		E9F4222D28C72CAF008290B0 /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
+		E9F4222F28C732D0008290B0 /* PlacemarkExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				E968420E28C082E800996F81 /* PrimaryButtonStyle.swift */,
+				E9F4222428C705F1008290B0 /* OpacityButtonStyle.swift */,
 			);
 			path = ButtonStyle;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 				E968421528C349DD00996F81 /* HomeView.swift */,
 				E968421C28C356D000996F81 /* HomeViewModel.swift */,
 				E968423228C4622600996F81 /* VehicleCardView.swift */,
+				E9F4222D28C72CAF008290B0 /* LocationCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -341,6 +353,7 @@
 				E968421028C0831000996F81 /* ButtonStyle */,
 				E9F4222128C66BEF008290B0 /* Extensions */,
 				E968421728C34CD300996F81 /* Home */,
+				E9F4222828C70977008290B0 /* Settings */,
 				E9CCD42E27CDA6770065E3C5 /* Login */,
 				E9CCD43B27CDACEE0065E3C5 /* Persistence */,
 				E9CCD45227D19FD10065E3C5 /* Networking */,
@@ -402,6 +415,7 @@
 				E968422128C370B600996F81 /* ActivityView.swift */,
 				E9CCD41827CC72A20065E3C5 /* WebView.swift */,
 				E968422628C3A1C100996F81 /* AnimatableView.swift */,
+				E9F4222928C71C6D008290B0 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -442,8 +456,17 @@
 			isa = PBXGroup;
 			children = (
 				E968423028C3E1CB00996F81 /* ColorExtension.swift */,
+				E9F4222F28C732D0008290B0 /* PlacemarkExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9F4222828C70977008290B0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E9F4222628C7096F008290B0 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -742,19 +765,24 @@
 				E968423128C3E1CB00996F81 /* ColorExtension.swift in Sources */,
 				E9CCD41D27CC77100065E3C5 /* AuthenticationController.swift in Sources */,
 				E9CCD43927CDAC910065E3C5 /* AppObject.swift in Sources */,
+				E9F4222728C7096F008290B0 /* SettingsView.swift in Sources */,
 				E9CCD41B27CC748B0065E3C5 /* LoginView.swift in Sources */,
 				E968423328C4622600996F81 /* VehicleCardView.swift in Sources */,
 				E9CCD3F627CC716B0065E3C5 /* TeslaConnect.xcdatamodeld in Sources */,
+				E9F4223028C732D0008290B0 /* PlacemarkExtensions.swift in Sources */,
 				E968420F28C082E800996F81 /* PrimaryButtonStyle.swift in Sources */,
 				E968421D28C356D000996F81 /* HomeViewModel.swift in Sources */,
 				E9CCD41927CC72A20065E3C5 /* WebView.swift in Sources */,
 				E968421628C349DD00996F81 /* HomeView.swift in Sources */,
 				E9CCD3F327CC716B0065E3C5 /* Persistence.swift in Sources */,
 				E9CCD45C27D1AE950065E3C5 /* AuthenticationManager.swift in Sources */,
+				E9F4222528C705F1008290B0 /* OpacityButtonStyle.swift in Sources */,
 				E9CCD3EC27CC716A0065E3C5 /* ContentView.swift in Sources */,
+				E9F4222A28C71C6D008290B0 /* MapView.swift in Sources */,
 				E968422228C370B600996F81 /* ActivityView.swift in Sources */,
 				E9CCD3EA27CC716A0065E3C5 /* TeslaConnectApp.swift in Sources */,
 				E968422728C3A1C100996F81 /* AnimatableView.swift in Sources */,
+				E9F4222E28C72CAF008290B0 /* LocationCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
