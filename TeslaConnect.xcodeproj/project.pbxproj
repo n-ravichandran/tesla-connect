@@ -356,7 +356,6 @@
 				E9F4222828C70977008290B0 /* Settings */,
 				E9CCD42E27CDA6770065E3C5 /* Login */,
 				E9CCD43B27CDACEE0065E3C5 /* Persistence */,
-				E9CCD45227D19FD10065E3C5 /* Networking */,
 				E9CCD43A27CDACAB0065E3C5 /* Views */,
 				E9CCD3ED27CC716B0065E3C5 /* Assets.xcassets */,
 				E9CCD3F427CC716B0065E3C5 /* TeslaConnect.xcdatamodeld */,
@@ -426,13 +425,6 @@
 				E9CCD3F227CC716B0065E3C5 /* Persistence.swift */,
 			);
 			path = Persistence;
-			sourceTree = "<group>";
-		};
-		E9CCD45227D19FD10065E3C5 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		E9F4221C28C64EBD008290B0 /* Home */ = {

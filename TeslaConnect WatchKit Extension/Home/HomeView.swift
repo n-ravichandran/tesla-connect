@@ -22,7 +22,7 @@ struct HomeView: View {
                     Text("Starlight")
                         .multilineTextAlignment(.center)
                         .font(.system(size: 18, weight: .medium))
-                    Text("300 Miles")
+                    Text("275 Miles")
                         .multilineTextAlignment(.center)
                         .font(.system(size: 14))
                         .foregroundColor(.gray)
