@@ -17,6 +17,15 @@
         "branch" : "master",
         "revision" : "314537ec697719fa33a9d48210f4d06a463286d3"
       }
+    },
+    {
+      "identity" : "mixpanel-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mixpanel/mixpanel-swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "770953c8d6bddd03afc4b85491800cb60bd52f00"
+      }
     }
   ],
   "version" : 2

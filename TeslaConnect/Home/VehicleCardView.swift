@@ -14,7 +14,7 @@ struct VehicleCardView: View {
     let batteryLevel: String
     let batteryImageName: String
     let batteryColor: Color
-    let mileRange: String = "275 Miles"
+    let mileRange: String
 
     var body: some View {
         VStack {
@@ -62,7 +62,8 @@ struct VehicleCardView_Preview: PreviewProvider {
             name: "Falcon",
             batteryLevel: "80%",
             batteryImageName: "battery.75",
-            batteryColor: .green
+            batteryColor: .green,
+            mileRange: "275 Miles"
         )
         .padding()
     }

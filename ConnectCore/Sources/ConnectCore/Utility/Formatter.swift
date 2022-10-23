@@ -26,6 +26,13 @@ public enum Formatters {
 
     public static let temperatureFormatter: MeasurementFormatter = {
         let measurementFormatter = MeasurementFormatter()
+        measurementFormatter.unitStyle = .short
+        measurementFormatter.numberFormatter = noFractionDigitsFormatter
+        return measurementFormatter
+    }()
+
+    public static let distanceFormatter: MeasurementFormatter = {
+        let measurementFormatter = MeasurementFormatter()
         measurementFormatter.unitStyle = .long
         measurementFormatter.numberFormatter = noFractionDigitsFormatter
         return measurementFormatter

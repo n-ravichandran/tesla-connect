@@ -83,7 +83,7 @@ struct SettingsView: View {
 
     private func logout() {
         dismiss()
-//        appObject.logout()
+        appObject.logout()
     }
 
 }

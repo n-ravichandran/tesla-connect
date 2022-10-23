@@ -61,11 +61,11 @@ public struct ChargeState: Codable {
     public let chargeEnableRequest: Bool
     public let chargeEnergyAdded: Double
     public let chargeLimitSoc, chargeLimitSocMax, chargeLimitSocMin, chargeLimitSocStd: Int
-    public let chargeMilesAddedIdeal, chargeMilesAddedRated: Int
-    public let chargePortColdWeatherMode: String? // Todo: Confirm type
+    public let chargeMilesAddedIdeal, chargeMilesAddedRated: Double
+    public let chargePortColdWeatherMode: Bool
     public let chargePortDoorOpen: Bool
     public let chargePortLatch: String
-    public let chargeRate: Int
+    public let chargeRate: Double
     public let chargeToMaxRange: Bool
     public let chargerActualCurrent, chargerPhases, chargerPilotCurrent, chargerPower: Int
     public let chargerVoltage: Int
@@ -79,7 +79,7 @@ public struct ChargeState: Codable {
     public let managedChargingStartTime: Date? // Todo: Confirm type
     public let managedChargingUserCanceled: Bool
     public let maxRangeChargeCounter, minutesToFullCharge: Int
-    public let notEnoughPowerToHeat, scheduledChargingPending: Bool
+    public let notEnoughPowerToHeat, scheduledChargingPending: Bool?
     public let scheduledChargingStartTime: Date? // Todo: Confirm type
     public let timeToFullCharge: Double
     public let timestamp: Int
@@ -136,7 +136,8 @@ public struct ChargeState: Codable {
 
 // MARK: - ClimateState
 public struct ClimateState: Codable {
-    public let batteryHeater, batteryHeaterNoPower: Bool
+    public let batteryHeater: Bool
+    public let batteryHeaterNoPower: Bool?
     public let climateKeeperMode: String
     public let defrostMode: Int
     public let driverTempSetting: Double
@@ -144,7 +145,7 @@ public struct ClimateState: Codable {
     public let insideTemp: Double
     public let isAutoConditioningOn, isClimateOn, isFrontDefrosterOn, isPreconditioning: Bool
     public let isRearDefrosterOn: Bool
-    public let leftTempDirection, maxAvailTemp, minAvailTemp, outsideTemp: Int
+    public let leftTempDirection, maxAvailTemp, minAvailTemp, outsideTemp: Double
     public let passengerTempSetting: Double
     public let remoteHeaterControlEnabled: Bool
     public let rightTempDirection, seatHeaterLeft, seatHeaterRight: Int
@@ -227,13 +228,13 @@ public struct GUISettings: Codable {
 
 public struct VehicleState: Codable {
     public let apiVersion: Int
-    public let autoparkStateV2, autoparkStyle: String
+    public let autoparkStateV2: String?
+    public let autoparkStyle: String?
     public let calendarSupported: Bool
     public let carVersion: String
     public let centerDisplayState, df, dr, fdWindow: Int
-    public let fpWindow, ft, homelinkDeviceCount: Int
-    public let homelinkNearby, isUserPresent: Bool
-    public let lastAutoparkError: String
+    public let fpWindow, ft: Int
+    public let isUserPresent: Bool
     public let locked: Bool
     public let mediaState: MediaState
     public let notificationsSupported: Bool
@@ -242,12 +243,13 @@ public struct VehicleState: Codable {
     public let pf, pr, rdWindow: Int
     public let remoteStart, remoteStartEnabled, remoteStartSupported: Bool
     public let rpWindow, rt: Int
-    public let sentryMode, sentryModeAvailable, smartSummonAvailable: Bool
+    public let sentryMode, sentryModeAvailable: Bool
+    public let smartSummonAvailable: Bool?
     public let softwareUpdate: SoftwareUpdate
     public let speedLimitMode: SpeedLimitMode
-    public let summonStandbyModeEnabled: Bool
-    public let sunRoofPercentOpen: Int
-    public let sunRoofState: String
+    public let summonStandbyModeEnabled: Bool?
+    public let sunRoofPercentOpen: Int?
+    public let sunRoofState: String?
     public let timestamp: Int
     public let valetMode, valetPinNeeded: Bool
     public let vehicleName: String?
@@ -263,10 +265,7 @@ public struct VehicleState: Codable {
         case fdWindow = "fd_window"
         case fpWindow = "fp_window"
         case ft
-        case homelinkDeviceCount = "homelink_device_count"
-        case homelinkNearby = "homelink_nearby"
         case isUserPresent = "is_user_present"
-        case lastAutoparkError = "last_autopark_error"
         case locked
         case mediaState = "media_state"
         case notificationsSupported = "notifications_supported"

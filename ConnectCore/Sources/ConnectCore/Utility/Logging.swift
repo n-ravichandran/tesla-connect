@@ -9,8 +9,8 @@ import Foundation
 import os
 
 public func Log(_ message: String, file: String = #file, line: Int = #line) {
-    let fileName = (file as NSString).lastPathComponent
-    let printableString = String(format: "[%@: %d] %@", fileName, line, message)
-    print(printableString)
+    let fileName = String((file as NSString).lastPathComponent).components(separatedBy: ".").first ?? ""
+//    let printableString = String(format: "[%@: %d] %@", fileName, line, message)
+//    print(printableString)
     os_log(.debug, "[%@: %d] %@", fileName, line, message)
 }

@@ -12,3 +12,11 @@ struct VehicelsAPIResponse: Decodable {
     let response: [Vehicle]
     let count: Int
 }
+
+struct VehicleDataAPIResponse: Decodable {
+    let data: VehicleData
+
+    enum CodingKeys: String, CodingKey {
+        case data = "response"
+    }
+}

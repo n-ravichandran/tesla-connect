@@ -47,12 +47,13 @@ class HomeViewModel: ObservableObject {
         showActivity = true
         Task {
             do {
-//                let vehicleID = try await getPrimaryVehicleID()
-//                let vehicleData = try await service.getVehicleData(for: vehicleID)
+                let vehicleID = try await getPrimaryVehicleID()
+                let vehicleData = try await service.getVehicleData(for: vehicleID)
                 await MainActor.run {
-//                    self.primaryVehicle = VehicleViewModel(data: vehicleData)
-                    self.setupMock()
+                    self.primaryVehicle = VehicleViewModel(data: vehicleData)
+//                    self.setupMock()
                     self.showActivity = false
+                    self.populateLocation(lat: vehicleData.driveState.latitude, long: vehicleData.driveState.longitude)
                 }
             } catch {
                 Log("Vehicle load failed: \(error)")
@@ -164,10 +165,11 @@ private extension HomeViewModel {
             model: .modelY,
             state: "online",
             batteryLevel: 80,
-            batteryRange: 325,
+            batteryRange: "300 mile",
             exteriorColor: "White",
             isLocked: true,
             interiorTemperature: "22℃",
+            exteriorTemperature: "10℃",
             isAnyWindowOpen: true
         )
     }
@@ -181,10 +183,11 @@ private extension HomeViewModel {
             model: .modelS,
             state: "online",
             batteryLevel: 50,
-            batteryRange: 325,
+            batteryRange: "300 miles",
             exteriorColor: "White",
             isLocked: isLocked,
             interiorTemperature: "22℃",
+            exteriorTemperature: "10℃",
             isAnyWindowOpen: true
         )
         update()

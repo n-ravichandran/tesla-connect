@@ -12,41 +12,41 @@ public struct Vehicle: Codable {
     public let vehicleID: Int
     public let vin: String
     public let displayName: String
-    public let optionCodes: String
-    public let color: String?
-    public let tokens: [String]
-    public let state: String
-    public let inService: Bool
-    public let idString: String
-    public let calendarEnabled: Bool
-    public let apiVersion: Int
+//    public let optionCodes: String
+//    public let color: String?
+//    public let tokens: [String]
+//    public let state: String
+//    public let inService: Bool
+//    public let idString: String
+//    public let calendarEnabled: Bool
+//    public let apiVersion: Int
 
     init(
         id: Int,
         vehicleID: Int,
         vin: String,
-        displayName: String,
-        optionCodes: String,
-        color: String?,
-        tokens: [String],
-        state: String,
-        inService: Bool,
-        idString: String,
-        calendarEnabled: Bool,
-        apiVersion: Int
+        displayName: String
+//        optionCodes: String,
+//        color: String?,
+//        tokens: [String],
+//        state: String,
+//        inService: Bool,
+//        idString: String,
+//        calendarEnabled: Bool,
+//        apiVersion: Int
     ) {
         self.id = id
         self.vehicleID = vehicleID
         self.vin = vin
         self.displayName = displayName
-        self.optionCodes = optionCodes
-        self.color = color
-        self.tokens = tokens
-        self.state = state
-        self.inService = inService
-        self.idString = idString
-        self.calendarEnabled = calendarEnabled
-        self.apiVersion = apiVersion
+//        self.optionCodes = optionCodes
+//        self.color = color
+//        self.tokens = tokens
+//        self.state = state
+//        self.inService = inService
+//        self.idString = idString
+//        self.calendarEnabled = calendarEnabled
+//        self.apiVersion = apiVersion
     }
 
     enum CodingKeys: String, CodingKey {
@@ -54,16 +54,16 @@ public struct Vehicle: Codable {
         case vehicleID = "vehicle_id"
         case vin
         case displayName = "display_name"
-        case optionCodes = "option_codes"
-        case color, tokens, state
-        case inService = "in_service"
-        case idString = "id_s"
-        case calendarEnabled = "calendar_enabled"
-        case apiVersion = "api_version"
+//        case optionCodes = "option_codes"
+//        case color, tokens, state
+//        case inService = "in_service"
+//        case idString = "id_s"
+//        case calendarEnabled = "calendar_enabled"
+//        case apiVersion = "api_version"
     }
 }
 
-public enum VehicleModel: String {
+public enum VehicleModel: String, Sendable {
     case modelS = "models"
     case model3 = "model3"
     case modelX = "modelx"

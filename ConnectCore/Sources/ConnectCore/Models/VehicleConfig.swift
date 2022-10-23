@@ -16,9 +16,9 @@ public struct VehicleConfig: Codable {
     public let rearSeatHeaters, rearSeatType: Int
     public let rhd: Bool
     public let roofColor: String
-    public let seatType: Int
+    public let seatType: Int?
     public let spoilerType: String
-    public let sunRoofInstalled: Int
+    public let sunRoofInstalled: Int?
     public let thirdRowSeats: String
     public let timestamp: Int
     public let trimBadging: String

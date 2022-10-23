@@ -17,8 +17,8 @@ public extension UnitTemperature {
 
 public extension UnitTemperature {
 
-    static func temperatureString(value: Double, unitString: String) -> String {
-        let measurement = Measurement(value: value, unit: unit(from: unitString))
+    static func temperatureString(value: Double, unit: UnitTemperature? = nil) -> String {
+        let measurement = Measurement(value: value, unit: unit ?? Self.celsius)
         return Formatters.temperatureFormatter.string(from: measurement)
     }
 

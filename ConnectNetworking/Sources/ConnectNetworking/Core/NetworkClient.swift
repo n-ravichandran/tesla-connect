@@ -8,6 +8,7 @@
 import Alamofire
 import Foundation
 import Combine
+import ConnectCore
 
 public protocol AuthTokenProvider: AnyObject {
     var accessToken: String? { get }
@@ -44,8 +45,20 @@ public class NetworkClient {
     }
 
     func request<T: Decodable>(requestBuilder: URLRequestBuilder, responseType: T.Type) async throws -> T {
-        try await session.request(requestBuilder, interceptor: self)
-            .serializingDecodable(responseType).value
+        let dataTask = session.request(requestBuilder, interceptor: self)
+            .validate(statusCode: 200..<400)
+            .serializingDecodable(responseType)
+        let result = await dataTask.result
+//        let response = await dataTask.response
+        switch result {
+            case .success(let success):
+                return success
+            case .failure(.responseValidationFailed(reason: .unacceptableStatusCode(code: 401))):
+                delegate?.sessionExpired()
+                throw APIError.unauthorized
+            case .failure(let error):
+                throw error
+        }
     }
     
 }
@@ -61,6 +74,7 @@ extension NetworkClient: RequestInterceptor {
         }
 
         var request = urlRequest
+        Log(request.debugDescription)
         request.headers.add(.authorization(bearerToken: accessToken))
         completion(.success(request))
     }

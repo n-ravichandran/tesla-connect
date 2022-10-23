@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E94C55912903402000A6E036 /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = E94C55902903402000A6E036 /* Mixpanel */; };
 		E968420F28C082E800996F81 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968420E28C082E800996F81 /* PrimaryButtonStyle.swift */; };
 		E968421628C349DD00996F81 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421528C349DD00996F81 /* HomeView.swift */; };
 		E968421D28C356D000996F81 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421C28C356D000996F81 /* HomeViewModel.swift */; };
@@ -208,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94C55912903402000A6E036 /* Mixpanel in Frameworks */,
 				E9CCD42A27CD99D60065E3C5 /* Alamofire in Frameworks */,
 				E968423B28C5FB5500996F81 /* ConnectCore in Frameworks */,
 				E968422528C3A04200996F81 /* Lottie in Frameworks */,
@@ -555,6 +557,7 @@
 				E968423A28C5FB5500996F81 /* ConnectCore */,
 				E968423D28C5FF5000996F81 /* ConnectNetworking */,
 				E9F4222228C66ECC008290B0 /* ConnectKit */,
+				E94C55902903402000A6E036 /* Mixpanel */,
 			);
 			productName = TeslaConnect;
 			productReference = E9CCD3E627CC716A0065E3C5 /* TeslaConnect.app */;
@@ -645,6 +648,7 @@
 			packageReferences = (
 				E9CCD42827CD99D60065E3C5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E968422328C3A04200996F81 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				E94C558F2903402000A6E036 /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 			);
 			productRefGroup = E9CCD3E727CC716A0065E3C5 /* Products */;
 			projectDirPath = "";
@@ -1361,6 +1365,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E94C558F2903402000A6E036 /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E968422328C3A04200996F81 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -1380,6 +1392,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E94C55902903402000A6E036 /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E94C558F2903402000A6E036 /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
 		E968422428C3A04200996F81 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E968422328C3A04200996F81 /* XCRemoteSwiftPackageReference "lottie-ios" */;

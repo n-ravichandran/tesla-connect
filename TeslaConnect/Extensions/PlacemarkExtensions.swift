@@ -14,7 +14,7 @@ extension CLPlacemark {
 
         var result = name
 
-        if let street = thoroughfare {
+        if let street = thoroughfare, !result.contains(street) {
             result += ", \(street)"
         }
 

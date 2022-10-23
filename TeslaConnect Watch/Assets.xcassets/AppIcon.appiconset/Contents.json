@@ -69,6 +69,7 @@
       "subtype" : "45mm"
     },
     {
+      "filename" : "App Store@1x.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -76,6 +77,7 @@
       "subtype" : "38mm"
     },
     {
+      "filename" : "App Store@1x-1.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -83,6 +85,7 @@
       "subtype" : "42mm"
     },
     {
+      "filename" : "App Store@1x-2.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -90,6 +93,7 @@
       "subtype" : "44mm"
     },
     {
+      "filename" : "icon@1x.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -97,6 +101,7 @@
       "subtype" : "45mm"
     },
     {
+      "filename" : "App Store@2x.png",
       "idiom" : "watch-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

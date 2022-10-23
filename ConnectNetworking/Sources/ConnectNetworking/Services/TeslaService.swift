@@ -31,8 +31,8 @@ public class TeslaService: APIService {
     public func getVehicleData(for id: Int) async throws -> VehicleData {
         try await client.request(
             requestBuilder: APIEndpoint.vehicleData(id: id),
-            responseType: VehicleData.self
-        )
+            responseType: VehicleDataAPIResponse.self
+        ).data
     }
     
 }

@@ -7,6 +7,7 @@
 
 import ConnectKit
 import Foundation
+import Mixpanel
 
 class AppObject: ObservableObject {
         
@@ -15,6 +16,7 @@ class AppObject: ObservableObject {
     init() {
         isAuthenticatedWithTesla = GroupKeychain.credentials != nil
         Log("Is previously authenticated: \(isAuthenticatedWithTesla)")
+        setupAnalytics()
         NetworkManager.configure(authTokenProvider: AuthenticationManager.shared) {
             self.isAuthenticatedWithTesla = false
         }
@@ -36,6 +38,10 @@ class AppObject: ObservableObject {
 
     func updateAuthStatus() {
         isAuthenticatedWithTesla = GroupKeychain.credentials != nil
+    }
+
+    func setupAnalytics() {
+        Mixpanel.initialize(token: "7dbad44110c014b58d1f6221518dd4aa", trackAutomaticEvents: true)
     }
     
 }

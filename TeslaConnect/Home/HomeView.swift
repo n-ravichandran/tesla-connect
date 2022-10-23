@@ -27,7 +27,8 @@ struct HomeView: View {
                                     name: vehicle.displayName,
                                     batteryLevel: vehicle.batteryLevelString,
                                     batteryImageName: vehicle.batteryLevelImageName,
-                                    batteryColor: vehicle.batteryColor
+                                    batteryColor: vehicle.batteryColor,
+                                    mileRange: vehicle.batteryRange
                                 )
 
                                 HStack(spacing: 20) {
@@ -40,7 +41,7 @@ struct HomeView: View {
                                     .frame(maxWidth: .infinity)
 
                                     CommandButton(
-                                        title: .constant("Open Frunk"),
+                                        title: .constant("Open Trunk"),
                                         iconName: .constant("car.fill")
                                     ) {
 
@@ -63,6 +64,7 @@ struct HomeView: View {
 
                                     ClimateCardView(
                                         temperatureString: vehicle.interiorTemperature,
+                                        exteriorTemperatureString: vehicle.exteriorTemperature,
                                         isAnyWindowOpen: vehicle.isAnyWindowOpen
                                     ).frame(maxWidth: .infinity)
                                 }
@@ -128,6 +130,7 @@ struct CommandButton: View {
 struct ClimateCardView: View {
 
     var temperatureString: String
+    var exteriorTemperatureString: String
     var isAnyWindowOpen: Bool
 
     var body: some View {
@@ -136,7 +139,7 @@ struct ClimateCardView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Climate")
                         .font(.headline)
-                    Text("EXTERIOR: N/A")
+                    Text("EXTERIOR: \(exteriorTemperatureString)")
                         .font(.footnote)
                         .foregroundColor(.gray)
                 }
@@ -173,13 +176,13 @@ struct NoCarsView: View {
         VStack {
             Spacer()
             Image(systemName: "bolt.car")
-                .font(.system(size: 25))
+                .font(.system(size: 30))
                 .padding(8)
             Text("You do not have any cars in your tesla account.")
                 .multilineTextAlignment(.center)
                 .font(.callout)
             Spacer()
-            Text("If you think this is an issue please reach out to the developer for assistance.")
+            Text("If you think this is an error please reach out to the developer for support.")
                 .multilineTextAlignment(.center)
                 .font(.footnote)
                 .foregroundColor(.gray)

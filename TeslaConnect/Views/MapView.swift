@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MapView: View {
 
-    @State private var region: MKCoordinateRegion
+    @State var region: MKCoordinateRegion
 
     init(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         region = MKCoordinateRegion(

@@ -8,16 +8,17 @@
 import ConnectCore
 import SwiftUI
 
-public struct VehicleViewModel {
+public struct VehicleViewModel: Sendable {
     public let id: Int
     public let displayName: String
     public let model: VehicleModel
     public let state: String
     public let batteryLevel: Int
-    public let batteryRange: Double
+    public let batteryRange: String
     public let exteriorColor: String
     public let isLocked: Bool
     public let interiorTemperature: String
+    public let exteriorTemperature: String
     public let isAnyWindowOpen: Bool
 
     public var imageName: String {
@@ -57,10 +58,11 @@ public struct VehicleViewModel {
         model: VehicleModel,
         state: String,
         batteryLevel: Int,
-        batteryRange: Double,
+        batteryRange: String,
         exteriorColor: String,
         isLocked: Bool,
         interiorTemperature: String,
+        exteriorTemperature: String,
         isAnyWindowOpen: Bool
     ) {
         self.id = id
@@ -73,6 +75,7 @@ public struct VehicleViewModel {
         self.isLocked = isLocked
         self.interiorTemperature = interiorTemperature
         self.isAnyWindowOpen = isAnyWindowOpen
+        self.exteriorTemperature = exteriorTemperature
     }
 
     public init(data: VehicleData) {
@@ -81,10 +84,11 @@ public struct VehicleViewModel {
         self.model = VehicleModel(value: data.vehicleConfig.carType)
         self.state = data.state
         self.batteryLevel = data.chargeState.batteryLevel
-        self.batteryRange = data.chargeState.estBatteryRange
+        self.batteryRange = UnitLength.rangeString(value: data.chargeState.estBatteryRange)
         self.exteriorColor = data.vehicleConfig.exteriorColor
         self.isLocked = data.vehicleState.locked
-        self.interiorTemperature = UnitTemperature.temperatureString(value: data.climateState.insideTemp, unitString: data.guiSettings.guiTemperatureUnits)
+        self.interiorTemperature = UnitTemperature.temperatureString(value: data.climateState.insideTemp)
+        self.exteriorTemperature = UnitTemperature.temperatureString(value: data.climateState.outsideTemp)
         self.isAnyWindowOpen = data.vehicleState.fdWindow != 0
         || data.vehicleState.fpWindow != 0
         || data.vehicleState.rdWindow != 0
