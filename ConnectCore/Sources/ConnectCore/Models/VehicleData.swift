@@ -67,7 +67,7 @@ public struct ChargeState: Codable {
     public let chargePortLatch: String
     public let chargeRate: Double
     public let chargeToMaxRange: Bool
-    public let chargerActualCurrent, chargerPhases, chargerPilotCurrent, chargerPower: Int
+    public let chargerActualCurrent, chargerPhases, chargerPilotCurrent, chargerPower: Int?
     public let chargerVoltage: Int
     public let chargingState, connChargeCable: String
     public let estBatteryRange: Double

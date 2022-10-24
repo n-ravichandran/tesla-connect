@@ -18,7 +18,9 @@ class AppObject: ObservableObject {
         Log("Is previously authenticated: \(isAuthenticatedWithTesla)")
         setupAnalytics()
         NetworkManager.configure(authTokenProvider: AuthenticationManager.shared) {
-            self.isAuthenticatedWithTesla = false
+            DispatchQueue.main.async {
+                self.isAuthenticatedWithTesla = false
+            }
         }
     }
     
