@@ -5,6 +5,7 @@
 //  Created by Niranjan Ravichandran on 9/6/22.
 //
 
+import MapKit
 import SwiftUI
 
 // MARK: - LocationCardView
@@ -24,7 +25,9 @@ struct LocationCardView: View {
                 Spacer()
                 ActivityView(isAnimating: $viewModel.isUpdating)
             }
-            MapView(latitude: viewModel.lat, longitude: viewModel.long)
+            Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.annotations) { item in
+                MapMarker(coordinate: item.coordinate, tint: .red)
+            }
                 .frame(height: 100)
                 .cornerRadius(12)
                 .padding(.horizontal, -5)

@@ -25,6 +25,7 @@ class AuthenticationController: NSObject, ObservableObject {
     
     func authorizeWithTesla(using code: String) {
         service.getBearerToken(from: code, codeVerifier: codeVerifier)
+            .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .finished:

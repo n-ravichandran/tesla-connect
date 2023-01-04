@@ -5,9 +5,11 @@
 //  Created by Niranjan Ravichandran on 9/3/22.
 //
 
+import Combine
 import ConnectKit
-import UIKit
 import CoreLocation
+import MapKit
+import UIKit
 
 enum VehicleError: Error {
     case noVehicle
@@ -22,10 +24,36 @@ struct UnlockCardViewModel {
 }
 
 struct LocationCardViewModel {
+
+    struct Annotation: Identifiable {
+        let id = UUID()
+        var coordinate: CLLocationCoordinate2D
+    }
+
     var lat: Double
     var long: Double
     var address: String
     var isUpdating: Bool
+    var region: MKCoordinateRegion
+    var annotations: [Annotation]
+
+    init(
+        lat: Double,
+        long: Double,
+        address: String,
+        isUpdating: Bool
+    ) {
+        self.lat = lat
+        self.long = long
+        self.address = address
+        self.isUpdating = isUpdating
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        region = MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+        )
+        annotations = [.init(coordinate: coordinate)]
+    }
 
     static var placeholder: Self {
         .init(lat: 40.7484, long: -73.9857, address: "Locating...", isUpdating: true)
@@ -48,20 +76,25 @@ class HomeViewModel: ObservableObject {
         Task {
             do {
                 let vehicleID = try await getPrimaryVehicleID()
-                let vehicleData = try await service.getVehicleData(for: vehicleID)
-                await MainActor.run {
-                    self.primaryVehicle = VehicleViewModel(data: vehicleData)
-//                    self.setupMock()
+//                let vehicleData = try await service.getVehicleData(for: vehicleID)
+                DispatchQueue.main.async {
+//                    self.primaryVehicle = VehicleViewModel(data: vehicleData)
+                    self.setupMock()
                     self.showActivity = false
-                    self.populateLocation(lat: vehicleData.driveState.latitude, long: vehicleData.driveState.longitude)
+//                    self.populateLocation(lat: vehicleData.driveState.latitude, long: vehicleData.driveState.longitude)
                 }
+//                self.showActivity = false
             } catch {
                 Log("Vehicle load failed: \(error)")
-                await MainActor.run {
-                    self.showActivity = false
+                await MainActor.run { [weak self] in
+                    self?.showActivity = false
                 }
             }
         }
+    }
+
+    deinit {
+        Log("Getting deallocated")
     }
 
     func getPrimaryVehicleID() async throws -> Int {
@@ -73,7 +106,7 @@ class HomeViewModel: ObservableObject {
         guard let vehicleID = vehiclesFetched.first?.id else {
             throw VehicleError.noVehicle
         }
-
+        GroupKeychain.primaryVehicleID = vehicleID
         return vehicleID
     }
 
@@ -92,8 +125,8 @@ class HomeViewModel: ObservableObject {
     func populateLocation(lat: Double, long: Double) {
         Task {
             let address = await getPostalAddress(lat: lat, long: long)
-            await MainActor.run {
-                locationCardViewModel = .init(
+            await MainActor.run { [weak self] in
+                self?.locationCardViewModel = .init(
                     lat: lat,
                     long: long,
                     address: address ?? "Unable to retrive address",

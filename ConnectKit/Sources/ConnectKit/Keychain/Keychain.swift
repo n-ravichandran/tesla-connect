@@ -38,15 +38,24 @@ public class Keychain {
         guard let data = data(forKey: key) else { return nil }
 
         switch T.self {
-        case is Data.Type, is Optional<Data>.Type:
-            return data as? T
+            case is Data.Type, is Optional<Data>.Type:
+                return data as? T
 
-        case is String.Type, is Optional<String>.Type:
-            return String(data: data, encoding: .utf8) as? T
+            case is String.Type, is Optional<String>.Type:
+                return String(data: data, encoding: .utf8) as? T
 
-        default:
-            Log("Can't get type '\(type(of: T.self))' for key '\(key)'")
-            return nil
+            case is Int.Type, is Optional<Int>.Type:
+                guard let stringValue = String(data: data, encoding: .utf8),
+                      let intValue = Int(stringValue)
+                else {
+                    Log("Can't convert data to int value")
+                    return nil
+                }
+                return intValue as? T
+
+            default:
+                Log("Can't get type '\(type(of: T.self))' for key '\(key)'")
+                return nil
         }
     }
 
@@ -63,19 +72,26 @@ public class Keychain {
         let data: Data
 
         switch value {
-        case let stringValue as String:
-            guard let dataValue = stringValue.data(using: .utf8) else {
-                Log("Can't convert string '\(stringValue)' to data for key '\(key)'")
+            case let stringValue as String:
+                guard let dataValue = stringValue.data(using: .utf8) else {
+                    Log("Can't convert string '\(stringValue)' to data for key '\(key)'")
+                    return
+                }
+                data = dataValue
+
+            case let dataValue as Data:
+                data = dataValue
+
+            case let intValue as Int:
+                guard let dataValue = "\(intValue)".data(using: .utf8) else {
+                    Log("Can't convert int '\(intValue)' to data for key '\(key)'")
+                    return
+                }
+                data = dataValue
+
+            default:
+                Log("Can't set type '\(type(of: value))' for key '\(key)'")
                 return
-            }
-            data = dataValue
-
-        case let dataValue as Data:
-            data = dataValue
-
-        default:
-            Log("Can't set type '\(type(of: value))' for key '\(key)'")
-            return
         }
 
         set(data, forKey: key)

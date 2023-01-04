@@ -56,6 +56,8 @@ public class NetworkClient {
             case .failure(.responseValidationFailed(reason: .unacceptableStatusCode(code: 401))):
                 delegate?.sessionExpired()
                 throw APIError.unauthorized
+            case .failure(.responseValidationFailed(reason: .unacceptableStatusCode(code: 408))):
+                throw APIError.timeout
             case .failure(let error):
                 throw error
         }

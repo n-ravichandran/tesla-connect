@@ -25,6 +25,7 @@ public enum APIError: Error {
     case noResponse
     case unauthorized
     case forbidden
+    case timeout
     
     public init(error: AFError) {
         switch error {
