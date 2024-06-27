@@ -28,8 +28,13 @@ struct MapView: View {
     }
 }
 
-//struct MapView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MapView(latitude: 40.7484, longitude: -73.9857)
-//    }
-//}
+#Preview {
+    MapView(
+        region: .constant(
+            .init(
+                center: .init(latitude: 40.7484, longitude: -73.9857),
+                span: .init(latitudeDelta: 0.03, longitudeDelta: 0.03)
+            )
+        )
+    )
+}

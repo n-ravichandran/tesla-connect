@@ -20,7 +20,6 @@
 		E968423B28C5FB5500996F81 /* ConnectCore in Frameworks */ = {isa = PBXBuildFile; productRef = E968423A28C5FB5500996F81 /* ConnectCore */; };
 		E968423E28C5FF5000996F81 /* ConnectNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = E968423D28C5FF5000996F81 /* ConnectNetworking */; };
 		E96842D928C60AF700996F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96842D828C60AF700996F81 /* Assets.xcassets */; };
-		E96842DF28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E96842DE28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E96842E428C60AF700996F81 /* TeslaConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96842E328C60AF700996F81 /* TeslaConnectApp.swift */; };
 		E96842E828C60AF700996F81 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96842E728C60AF700996F81 /* NotificationController.swift */; };
 		E96842EA28C60AF700996F81 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96842E928C60AF700996F81 /* NotificationView.swift */; };
@@ -57,19 +56,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E96842E028C60AF700996F81 /* PBXContainerItemProxy */ = {
+		E21E9D852C2DAE5200FF844E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E9CCD3DE27CC716A0065E3C5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E96842DD28C60AF700996F81;
-			remoteInfo = "TeslaConnect Watch WatchKit Extension";
-		};
-		E96842F928C60AF700996F81 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E9CCD3DE27CC716A0065E3C5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E96842DD28C60AF700996F81;
-			remoteInfo = "TeslaConnect Watch WatchKit Extension";
+			remoteGlobalIDString = E96842D528C60AF600996F81;
+			remoteInfo = "TeslaConnect Watch";
 		};
 		E968430328C60AF700996F81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -102,17 +94,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E968431028C60AF700996F81 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				E96842DF28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E968431428C60AF700996F81 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,7 +122,6 @@
 		E968423C28C5FE2A00996F81 /* ConnectNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ConnectNetworking; sourceTree = "<group>"; };
 		E96842D628C60AF600996F81 /* TeslaConnect Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeslaConnect Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96842D828C60AF700996F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E96842DE28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TeslaConnect Watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96842E328C60AF700996F81 /* TeslaConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaConnectApp.swift; sourceTree = "<group>"; };
 		E96842E728C60AF700996F81 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		E96842E928C60AF700996F81 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -337,7 +317,6 @@
 				E9CCD3FB27CC716B0065E3C5 /* TeslaConnectTests.xctest */,
 				E9CCD40527CC716B0065E3C5 /* TeslaConnectUITests.xctest */,
 				E96842D628C60AF600996F81 /* TeslaConnect Watch.app */,
-				E96842DE28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex */,
 				E96842F828C60AF700996F81 /* TeslaConnect WatchTests.xctest */,
 				E968430228C60AF700996F81 /* TeslaConnect WatchUITests.xctest */,
 			);
@@ -471,34 +450,17 @@
 			buildConfigurationList = E968431128C60AF700996F81 /* Build configuration list for PBXNativeTarget "TeslaConnect Watch" */;
 			buildPhases = (
 				E96842D428C60AF600996F81 /* Resources */,
-				E968431028C60AF700996F81 /* Embed App Extensions */,
+				E96842DA28C60AF700996F81 /* Sources */,
+				E96842DB28C60AF700996F81 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E96842E128C60AF700996F81 /* PBXTargetDependency */,
 			);
 			name = "TeslaConnect Watch";
 			productName = "TeslaConnect Watch";
 			productReference = E96842D628C60AF600996F81 /* TeslaConnect Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		E96842DD28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E968430D28C60AF700996F81 /* Build configuration list for PBXNativeTarget "TeslaConnect Watch WatchKit Extension" */;
-			buildPhases = (
-				E96842DA28C60AF700996F81 /* Sources */,
-				E96842DB28C60AF700996F81 /* Frameworks */,
-				E96842DC28C60AF700996F81 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "TeslaConnect Watch WatchKit Extension";
-			productName = "TeslaConnect Watch WatchKit Extension";
-			productReference = E96842DE28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			productType = "com.apple.product-type.application";
 		};
 		E96842F728C60AF700996F81 /* TeslaConnect WatchTests */ = {
 			isa = PBXNativeTarget;
@@ -511,7 +473,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				E96842FA28C60AF700996F81 /* PBXTargetDependency */,
+				E21E9D862C2DAE5200FF844E /* PBXTargetDependency */,
 			);
 			name = "TeslaConnect WatchTests";
 			productName = "TeslaConnect WatchTests";
@@ -607,17 +569,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					E96842D528C60AF600996F81 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					E96842DD28C60AF700996F81 = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
 					E96842F728C60AF700996F81 = {
 						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = E96842DD28C60AF700996F81;
+						TestTargetID = E96842D528C60AF600996F81;
 					};
 					E968430128C60AF700996F81 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -658,7 +617,6 @@
 				E9CCD3FA27CC716B0065E3C5 /* TeslaConnectTests */,
 				E9CCD40427CC716B0065E3C5 /* TeslaConnectUITests */,
 				E96842D528C60AF600996F81 /* TeslaConnect Watch */,
-				E96842DD28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension */,
 				E96842F728C60AF700996F81 /* TeslaConnect WatchTests */,
 				E968430128C60AF700996F81 /* TeslaConnect WatchUITests */,
 			);
@@ -670,16 +628,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96842D928C60AF700996F81 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E96842DC28C60AF700996F81 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				E96842F128C60AF700996F81 /* Preview Assets.xcassets in Resources */,
 				E96842EE28C60AF700996F81 /* Assets.xcassets in Resources */,
+				E96842D928C60AF700996F81 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,15 +753,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E96842E128C60AF700996F81 /* PBXTargetDependency */ = {
+		E21E9D862C2DAE5200FF844E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E96842DD28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension */;
-			targetProxy = E96842E028C60AF700996F81 /* PBXContainerItemProxy */;
-		};
-		E96842FA28C60AF700996F81 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E96842DD28C60AF700996F81 /* TeslaConnect Watch WatchKit Extension */;
-			targetProxy = E96842F928C60AF700996F81 /* PBXContainerItemProxy */;
+			target = E96842D528C60AF600996F81 /* TeslaConnect Watch */;
+			targetProxy = E21E9D852C2DAE5200FF844E /* PBXContainerItemProxy */;
 		};
 		E968430428C60AF700996F81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -835,84 +781,27 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		E968430E28C60AF700996F81 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "TeslaConnect WatchKit Extension/TeslaConnectWatchKitExtension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TeslaConnect WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R8U9B2AP5;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TeslaConnect WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "TeslaConnect Watch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nravichan.tesla.connect.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Debug;
-		};
-		E968430F28C60AF700996F81 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "TeslaConnect WatchKit Extension/TeslaConnectWatchKitExtension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TeslaConnect WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R8U9B2AP5;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TeslaConnect WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "TeslaConnect Watch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nravichan.tesla.connect.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Release;
-		};
 		E968431228C60AF700996F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TeslaConnect WatchKit Extension/TeslaConnectWatchKitExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7R8U9B2AP5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IBSC_MODULE = TeslaConnect_Watch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "TeslaConnect Watch";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nravichan.tesla.connect;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nravichan.tesla.connect.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -921,7 +810,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -930,15 +819,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TeslaConnect WatchKit Extension/TeslaConnectWatchKitExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7R8U9B2AP5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IBSC_MODULE = TeslaConnect_Watch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "TeslaConnect Watch";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nravichan.tesla.connect;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nravichan.tesla.connect.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -947,7 +843,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -967,8 +863,8 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeslaConnect Watch WatchKit Extension.appex/TeslaConnect Watch WatchKit Extension";
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeslaConnect Watch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TeslaConnect Watch";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -988,8 +884,8 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeslaConnect Watch WatchKit Extension.appex/TeslaConnect Watch WatchKit Extension";
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeslaConnect Watch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TeslaConnect Watch";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -1008,7 +904,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_TARGET_NAME = "TeslaConnect Watch";
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -1027,7 +923,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_TARGET_NAME = "TeslaConnect Watch";
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -1035,6 +931,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1068,6 +965,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1097,6 +995,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1130,6 +1029,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1222,7 +1122,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7R8U9B2AP5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nravichan.TeslaConnectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1242,7 +1142,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7R8U9B2AP5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nravichan.TeslaConnectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1292,15 +1192,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E968430D28C60AF700996F81 /* Build configuration list for PBXNativeTarget "TeslaConnect Watch WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E968430E28C60AF700996F81 /* Debug */,
-				E968430F28C60AF700996F81 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E968431128C60AF700996F81 /* Build configuration list for PBXNativeTarget "TeslaConnect Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
