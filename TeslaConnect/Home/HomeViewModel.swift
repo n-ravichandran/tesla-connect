@@ -75,7 +75,7 @@ class HomeViewModel: ObservableObject {
         showActivity = true
         Task {
             do {
-                let vehicleID = try await getPrimaryVehicleID()
+                _ = try await getPrimaryVehicleID()
 //                let vehicleData = try await service.getVehicleData(for: vehicleID)
                 DispatchQueue.main.async {
 //                    self.primaryVehicle = VehicleViewModel(data: vehicleData)

@@ -458,6 +458,8 @@
 			dependencies = (
 			);
 			name = "TeslaConnect Watch";
+			packageProductDependencies = (
+			);
 			productName = "TeslaConnect Watch";
 			productReference = E96842D628C60AF600996F81 /* TeslaConnect Watch.app */;
 			productType = "com.apple.product-type.application";
