@@ -13,13 +13,10 @@ import WebKit
 
 class AuthenticationController: NSObject, ObservableObject {
     
-    private static let CallbackURL = "https://nravichan.com/tezconnect?code"
-    private static let clientID = ""
-    private static let clientSecret = ""
+    private lazy var configuration = Configuration()
 
     private let state = String.randon(length: 10)
     private let codeVerifier = String.randon(length: 86)
-    private var currentCodeChallenge: String?
 
     let service = TeslaService()
     var cancellables: Set<AnyCancellable> = []
@@ -30,7 +27,7 @@ class AuthenticationController: NSObject, ObservableObject {
     }
 
     func authorizeWithTesla(using code: String) {
-        service.getBearerToken(from: code, clientID: Self.clientID, clientSecret: Self.clientSecret)
+        service.getBearerToken(from: code, clientID: configuration.clientID, clientSecret: configuration.clientSecret)
             .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
@@ -68,8 +65,8 @@ extension AuthenticationController: URLProvider {
         var components = URLComponents(string: "https://auth.tesla.com/oauth2/v3/authorize")!
         components.queryItems = [
             URLQueryItem(name: "response_type", value: "code"),
-            URLQueryItem(name: "client_id", value: Self.clientID), // Todo: inject this from build settings
-            URLQueryItem(name: "redirect_uri", value: "https://nravichan.com/tezconnect"),
+            URLQueryItem(name: "client_id", value: configuration.clientID),
+            URLQueryItem(name: "redirect_uri", value: configuration.redirectURI),
             URLQueryItem(name: "scope", value: "openid offline_access user_data vehicle_device_data vehicle_cmds vehicle_charging_cmds"),
             URLQueryItem(name: "state", value: state),
             URLQueryItem(name: "nonce", value: nonce),
@@ -87,7 +84,7 @@ extension AuthenticationController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         Log("navigating to: \(navigationAction.request.url!.absoluteString)")
-        if (navigationAction.request.url?.absoluteString.contains(Self.CallbackURL)).isTrue {
+        if (navigationAction.request.url?.absoluteString.contains(configuration.callbackURL)).isTrue {
             handleCallback(url: navigationAction.request.url)
             decisionHandler(.cancel)
             return

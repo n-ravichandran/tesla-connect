@@ -102,6 +102,7 @@ class HomeViewModel: ObservableObject {
             return vehicleID
         }
 
+        let configuration = Configuration()
         let vehiclesFetched = try await service.getVehicles()
         guard let vehicleID = vehiclesFetched.first?.id else {
             throw VehicleError.noVehicle

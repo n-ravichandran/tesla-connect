@@ -24,7 +24,9 @@ let package = Package(
             dependencies: [
                 .product(name: "ConnectCore", package: "ConnectCore"),
                 .product(name: "ConnectNetworking", package: "ConnectNetworking"),
-            ]),
+            ],
+            resources: [.process("Resources")]
+        ),
         .testTarget(
             name: "ConnectKitTests",
             dependencies: ["ConnectKit"]),
