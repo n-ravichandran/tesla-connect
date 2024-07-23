@@ -9,14 +9,11 @@ import Alamofire
 import Foundation
 
 private enum URLConstant {
-    
-    static let owner = "https://owner-api.teslamotors.com"
+    static let fleet = "https://fleet-api.prd.na.vn.cloud.tesla.com"
     static let auth = "https://auth.tesla.com/oauth2/v3/token"
-    
 }
 
 enum APIEndpoint: URLRequestBuilder {
-    
     case bearerToken(_ parameters: BearerTokenRequestParams)
     case refreshToken(_ parameters: RefreshTokenRequestParam)
     case vehicles
@@ -65,18 +62,15 @@ enum APIEndpoint: URLRequestBuilder {
     
     var isAuthEndpoint: Bool {
         switch self {
-            case .bearerToken,
-                    .refreshToken:
+            case .bearerToken, .refreshToken:
                 return true
             case .vehicle, .vehicles, .vehicleData:
                 return false
         }
     }
-    
 }
 
 public protocol URLRequestBuilder: URLRequestConvertible {
-    
     var isAuthEndpoint: Bool { get }
 
     var path: String { get }
@@ -92,16 +86,14 @@ public protocol URLRequestBuilder: URLRequestConvertible {
     var requestURL: URL { get }
 
     var encoding: ParameterEncoding { get }
-
 }
 
 extension URLRequestBuilder {
-
     var requestURL: URL {
         if isAuthEndpoint {
             return URL(string: URLConstant.auth)!
         }
-        return URL(string: URLConstant.owner)!.appendingPathComponent(path)
+        return URL(string: URLConstant.fleet)!.appendingPathComponent(path)
     }
 
     var encoding: ParameterEncoding {
@@ -125,5 +117,4 @@ extension URLRequestBuilder {
     func asURLRequest() throws -> URLRequest {
         try encoding.encode(urlRequest, with: parameters)
     }
-
 }
