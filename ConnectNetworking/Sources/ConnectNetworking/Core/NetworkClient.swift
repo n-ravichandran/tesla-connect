@@ -49,7 +49,6 @@ public class NetworkClient {
             .validate(statusCode: 200..<400)
             .serializingDecodable(responseType)
         let result = await dataTask.result
-//        let response = await dataTask.response
         switch result {
             case .success(let success):
                 return success

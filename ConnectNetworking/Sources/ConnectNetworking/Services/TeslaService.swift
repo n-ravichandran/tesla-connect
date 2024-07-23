@@ -42,8 +42,8 @@ public class TeslaService: APIService {
 // Todo: Migrate to use async/await
 public extension TeslaService {
 
-    func getBearerToken(from authorizationCode: String, codeVerifier: String) -> AnyPublisher<Credentials, APIError> {
-        let parameters = BearerTokenRequestParams(code: authorizationCode, codeVerifier: codeVerifier)
+    func getBearerToken(from authorizationCode: String, clientID: String, clientSecret: String) -> AnyPublisher<Credentials, APIError> {
+        let parameters = BearerTokenRequestParams(clientID: clientID, clientSecret: clientSecret, code: authorizationCode)
         return client.rawRequest(requestBuilder: APIEndpoint.bearerToken(parameters), responseType: Credentials.self)
     }
 

@@ -13,8 +13,10 @@ import WebKit
 
 class AuthenticationController: NSObject, ObservableObject {
     
-    private static let CallbackURL = "https://auth.tesla.com/void/callback?code="
-    
+    private static let CallbackURL = "https://nravichan.com/tezconnect?code"
+    private static let clientID = ""
+    private static let clientSecret = ""
+
     private let state = String.randon(length: 10)
     private let codeVerifier = String.randon(length: 86)
     private var currentCodeChallenge: String?
@@ -22,16 +24,20 @@ class AuthenticationController: NSObject, ObservableObject {
     let service = TeslaService()
     var cancellables: Set<AnyCancellable> = []
     var appObject: AppObject?
-    
+
+    private var nonce: String {
+        String.randon(length: 10).md5Hash
+    }
+
     func authorizeWithTesla(using code: String) {
-        service.getBearerToken(from: code, codeVerifier: codeVerifier)
+        service.getBearerToken(from: code, clientID: Self.clientID, clientSecret: Self.clientSecret)
             .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .finished:
                     Log("Authorization complete")
                 case .failure(let error):
-                    Log(error.localizedDescription)
+                    Log("failed to get accessToken - \(error.localizedDescription)", level: .warn)
                 }
             } receiveValue: { credentials in
                 Log("Received access token")
@@ -59,10 +65,18 @@ extension AuthenticationController: URLProvider {
     }
     
     func makeURL() -> URL {
-        let code = codeChallenge
-        currentCodeChallenge = code
-        Log("State: \(state) | code_verifier: \(codeVerifier) | code_challenge: \(code)")
-        return URL(string: "https://auth.tesla.com/oauth2/v3/authorize?client_id=ownerapi&code_challenge_method=S256&response_type=code&code_challenge=\(code)&redirect_uri=https%3A%2F%2Fauth.tesla.com%2Fvoid%2Fcallback&scope=openid+email+offline_access&state=\(state)")!
+        var components = URLComponents(string: "https://auth.tesla.com/oauth2/v3/authorize")!
+        components.queryItems = [
+            URLQueryItem(name: "response_type", value: "code"),
+            URLQueryItem(name: "client_id", value: Self.clientID), // Todo: inject this from build settings
+            URLQueryItem(name: "redirect_uri", value: "https://nravichan.com/tezconnect"),
+            URLQueryItem(name: "scope", value: "openid offline_access user_data vehicle_device_data vehicle_cmds vehicle_charging_cmds"),
+            URLQueryItem(name: "state", value: state),
+            URLQueryItem(name: "nonce", value: nonce),
+        ]
+
+        Log("url: \(components.url!)")
+        return components.url!
     }
 
 }
@@ -72,6 +86,7 @@ extension AuthenticationController: URLProvider {
 extension AuthenticationController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        Log("navigating to: \(navigationAction.request.url!.absoluteString)")
         if (navigationAction.request.url?.absoluteString.contains(Self.CallbackURL)).isTrue {
             handleCallback(url: navigationAction.request.url)
             decisionHandler(.cancel)

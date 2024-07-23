@@ -11,6 +11,7 @@ import Foundation
 struct VehicelsAPIResponse: Decodable {
     let response: [Vehicle]
     let count: Int
+    // Todo: Add pagination struct to get page info
 }
 
 struct VehicleDataAPIResponse: Decodable {
