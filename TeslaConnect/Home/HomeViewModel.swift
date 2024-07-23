@@ -75,15 +75,14 @@ class HomeViewModel: ObservableObject {
         showActivity = true
         Task {
             do {
-                _ = try await getPrimaryVehicleID()
-//                let vehicleData = try await service.getVehicleData(for: vehicleID)
+                let vehicleID = try await getPrimaryVehicleID()
+                let vehicleData = try await service.getVehicleData(for: vehicleID)
                 DispatchQueue.main.async {
-//                    self.primaryVehicle = VehicleViewModel(data: vehicleData)
-                    self.setupMock()
+                    self.primaryVehicle = VehicleViewModel(data: vehicleData)
                     self.showActivity = false
-//                    self.populateLocation(lat: vehicleData.driveState.latitude, long: vehicleData.driveState.longitude)
+                    self.populateLocation(lat: vehicleData.driveState.latitude, long: vehicleData.driveState.longitude)
                 }
-//                self.showActivity = false
+                self.showActivity = false
             } catch {
                 Log("Vehicle load failed: \(error)")
                 await MainActor.run { [weak self] in
@@ -102,7 +101,6 @@ class HomeViewModel: ObservableObject {
             return vehicleID
         }
 
-        let configuration = Configuration()
         let vehiclesFetched = try await service.getVehicles()
         guard let vehicleID = vehiclesFetched.first?.id else {
             throw VehicleError.noVehicle
