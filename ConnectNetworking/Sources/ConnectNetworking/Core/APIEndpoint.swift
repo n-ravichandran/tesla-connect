@@ -16,43 +16,46 @@ private enum URLConstant {
 enum APIEndpoint: URLRequestBuilder {
     case bearerToken(_ parameters: BearerTokenRequestParams)
     case refreshToken(_ parameters: RefreshTokenRequestParam)
+    case user
     case vehicles
     case vehicle(id: Int)
     case vehicleData(id: Int)
     
     var path: String {
         switch self {
-            case .bearerToken:
-                return ""
-            case .refreshToken:
-                return "/oauth/token"
-            case .vehicles:
-                return "/api/1/vehicles"
-            case .vehicle(let id):
-                return "/api/1/vehicles/\(id)"
-            case .vehicleData(let id):
-                return "/api/1/vehicles/\(id)/vehicle_data"
+        case .bearerToken:
+            return ""
+        case .refreshToken:
+            return "/oauth/token"
+        case .user:
+            return "/api/1/users/me"
+        case .vehicles:
+            return "/api/1/vehicles"
+        case .vehicle(let id):
+            return "/api/1/vehicles/\(id)"
+        case .vehicleData(let id):
+            return "/api/1/vehicles/\(id)/vehicle_data"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-            case .bearerToken,
-                    .refreshToken:
-                return .post
-            case .vehicle, .vehicles, .vehicleData:
-                return .get
+        case .bearerToken,
+                .refreshToken:
+            return .post
+        case .user, .vehicle, .vehicles, .vehicleData:
+            return .get
         }
     }
     
     var parameters: Parameters? {
         switch self {
-            case .bearerToken(let parameters):
-                return parameters.dictionary
-            case .refreshToken(let parameters):
-                return parameters.dictionary
-            case .vehicle, .vehicles, .vehicleData:
-                return nil
+        case .bearerToken(let parameters):
+            return parameters.dictionary
+        case .refreshToken(let parameters):
+            return parameters.dictionary
+        case .user, .vehicle, .vehicles, .vehicleData:
+            return nil
         }
     }
     
@@ -62,10 +65,10 @@ enum APIEndpoint: URLRequestBuilder {
     
     var isAuthEndpoint: Bool {
         switch self {
-            case .bearerToken, .refreshToken:
-                return true
-            case .vehicle, .vehicles, .vehicleData:
-                return false
+        case .bearerToken, .refreshToken:
+            return true
+        case .user, .vehicle, .vehicles, .vehicleData:
+            return false
         }
     }
 }

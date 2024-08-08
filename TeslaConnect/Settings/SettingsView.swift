@@ -8,31 +8,32 @@
 import SwiftUI
 
 private enum Option: String, Identifiable, CaseIterable {
-
+    case name = "User"
     case logout = "Logout"
 
     var id: Self { self }
 
     var color: Color {
         switch self {
-            case .logout:
-                return .red
+        case .name: return .primary
+        case .logout: return .red
         }
     }
 
     var iconName: String {
         switch self {
-            case .logout:
-                return "rectangle.portrait.and.arrow.right"
+        case .name: return "person"
+        case .logout: return "rectangle.portrait.and.arrow.right"
         }
     }
 }
 
 struct SettingsView: View {
-
     @EnvironmentObject var appObject: AppObject
     @Environment(\.presentationMode) var presentationMode
     @State private var showLogoutAlert = false
+
+    @StateObject private var viewModel = SettingsViewModel()
 
     var body: some View {
         NavigationView {
@@ -44,6 +45,12 @@ struct SettingsView: View {
                         Image(systemName: option.iconName)
                             .foregroundColor(option.color)
                         Text(option.rawValue)
+
+                        if option == .name {
+                            Spacer()
+                            Text(viewModel.name)
+                                .foregroundStyle(Color.gray)
+                        }
                     }
                 }
                 .buttonStyle(OpacityButtonStyle())
@@ -72,8 +79,9 @@ struct SettingsView: View {
 
     private func didSelect(option: Option) {
         switch option {
-            case .logout:
-                showLogoutAlert = true
+        case .name: break
+        case .logout:
+            showLogoutAlert = true
         }
     }
 
@@ -85,5 +93,4 @@ struct SettingsView: View {
         dismiss()
         appObject.logout()
     }
-
 }

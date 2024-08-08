@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2DB5EAB2C645DF200163C10 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB5EAA2C645DF200163C10 /* SettingsViewModel.swift */; };
 		E94C55912903402000A6E036 /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = E94C55902903402000A6E036 /* Mixpanel */; };
 		E968420F28C082E800996F81 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968420E28C082E800996F81 /* PrimaryButtonStyle.swift */; };
 		E968421628C349DD00996F81 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968421528C349DD00996F81 /* HomeView.swift */; };
@@ -108,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E2DB5EAA2C645DF200163C10 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E968420E28C082E800996F81 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		E968421128C3414500996F81 /* TeslaConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeslaConnect.entitlements; sourceTree = "<group>"; };
 		E968421428C3464B00996F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				E9F4222628C7096F008290B0 /* SettingsView.swift */,
+				E2DB5EAA2C645DF200163C10 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				E9F4222A28C71C6D008290B0 /* MapView.swift in Sources */,
 				E968422228C370B600996F81 /* ActivityView.swift in Sources */,
 				E9CCD3EA27CC716A0065E3C5 /* TeslaConnectApp.swift in Sources */,
+				E2DB5EAB2C645DF200163C10 /* SettingsViewModel.swift in Sources */,
 				E968422728C3A1C100996F81 /* AnimatableView.swift in Sources */,
 				E9F4222E28C72CAF008290B0 /* LocationCardView.swift in Sources */,
 			);
